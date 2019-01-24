@@ -40,7 +40,7 @@ async def announce(ctx, channel: discord.Channel=None, *, msg: str):
 @client.command(pass_context = True)
 async def rolldice(ctx):
     choices = ['1', '2', '3', '4', '5', '6']
-    color = discord.Color(value=0x00ff00)
+    color = discord.Color(value=0xf9fcfc)
     em = discord.Embed(color=color, title='Rolled! (1 6-sided die)', description=random.choice(choices))
     await client.send_typing(ctx.message.channel)
     await client.say(embed=em)

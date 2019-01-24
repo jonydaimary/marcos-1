@@ -2,4 +2,3 @@ discord.py
 asyncio
 Status
 PyNaCl
-praw

@@ -12,21 +12,18 @@ import time
 import datetime
 import requests
 import json
-import aiohttp		
-import box
+import aiohttp	
+
+##PREFIX##
+Forbidden= discord.Embed(title="Permission Denied", description="1) Please check whether you have permission to perform this action or not. \n2) Please check whether my role has permission to perform this action in this channel or not. \n3) Please check my role position.", color=0x00ff00)
+bot = commands.Bot(description="marcos Official Bot", command_prefix=commands.when_mentioned_or("!!"), pm_help = True)
+bot.remove_command('help')
 
 
-Forbidden= discord.Embed(title="Permission Denied", description="1) Please check whether you have permission to perform this action or not. \n2) Please check whether my role has permission to perform this action in this channel or not. \n3) Please check my role position.", color=0Xf9fcfc)
-client = commands.Bot(description="DAB Official Bot", command_prefix=commands.when_mentioned_or("*"), pm_help = True)
-
-@client.event
+##BOT IS READY## 
+@bot.event
 async def on_ready():
-    print('Logged in as '+client.user.name+' (ID:'+client.user.id+') | Connected to '+str(len(client.servers))+' servers | Connected to '+str(len(set(client.get_all_members())))+' users')
-    print('--------')
-    print('--------')
-    print('Started New here ')
-    print('Created by marcos')
-    client.loop.create_task(status_task())
+    print("Bot Is Online! And Ready To Spam")
 
 
 client.run(os.getenv('Token'))

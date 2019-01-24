@@ -29,7 +29,7 @@ async def on_ready():
 @client.command(pass_context = True)
 @commands.has_permissions(administrator=True) 
 async def announce(ctx, channel: discord.Channel=None, *, msg: str):
-    if channel == None:
+    if user == None:
         await client.say(" ```Proper usage is\n\nannounce<channel><matter>```")
         return
     else:

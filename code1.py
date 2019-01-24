@@ -37,16 +37,17 @@ async def announce(ctx, channel: discord.Channel=None, *, msg: str):
 	
    
 @client.command(pass_context=True)
-async def hug(ctx, user: discord.Member = None):
+async def kiss(ctx, user: discord.Member):
     if user == None:
-        await client.say("```Proper usage is\n\n!!hug <mention a user>```")
+        await client.say("```Proper usage is\n\n!!kiss <mention a user>```")
     if user.id == ctx.message.author.id:
-        await client.say("{} Wanted to hug himself/herself , good luck on that you will look like an idiot trying to do it".format(user.mention))
+        await client.say("Goodluck kissing yourself {}".format(ctx.message.author.mention))
     else:
-        randomurl = ["http://gifimage.net/wp-content/uploads/2017/09/anime-hug-gif-5.gif", "https://media1.tenor.com/images/595f89fa0ea06a5e3d7ddd00e920a5bb/tenor.gif?itemid=7919037", "https://media.giphy.com/media/NvkwNVuHdLRSw/giphy.gif"]
-        embed = discord.Embed(title=f"{user.name} You just got a hug from {ctx.message.author.name}", color=0Xf9fcfc)
+        randomurl = ["https://media3.giphy.com/media/G3va31oEEnIkM/giphy.gif", "https://i.imgur.com/eisk88U.gif", "https://media1.tenor.com/images/e4fcb11bc3f6585ecc70276cc325aa1c/tenor.gif?itemid=7386341", "http://25.media.tumblr.com/6a0377e5cab1c8695f8f115b756187a8/tumblr_msbc5kC6uD1s9g6xgo1_500.gif"]
+        embed = discord.Embed(title=f"{user.name} You just got a kiss from {ctx.message.author.name}", color=0Xf9fcfc)
         embed.set_image(url=random.choice(randomurl))
-        await client.say(embed=embed)    
+        await client.say(embed=embed)
+ 
 
 client.run(os.getenv('Token'))
 

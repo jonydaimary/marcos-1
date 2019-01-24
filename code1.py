@@ -58,7 +58,7 @@ async def membercount(ctx, *args):
     bots_on = str(len([m for m in g.members if m.bot and not m.status == Status.offline]))
     created = str(g.created_at)
     
-    em = Embed(title="Membercount")
+    em =Embed(title="Membercount")
     em.description =    "**\n" \
                         "Members:   %s (%s)\n" \
                         "  Users:   %s (%s)\n" \

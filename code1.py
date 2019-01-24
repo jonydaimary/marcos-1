@@ -68,7 +68,6 @@ async def membercount(ctx, *args):
                         "```" % (membs, membs_on, users, users_on, bots, bots_on, created)
 
     await client.send_message(ctx.message.channel, embed=em)
-    await client.delete_message(ctx.message)
 
 
 client.run(os.getenv('Token'))

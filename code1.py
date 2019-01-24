@@ -55,6 +55,12 @@ async def flipcoin(ctx):
     await client.say(embed=em)
 	     
 
+@client.command(pass_context=True)
+async def youtube(ctx, *, message: str):
+    new_message = message.replace(" ", "+")
+    url = f"https://www.youtube.com/results?search_query={new_message}"
+    await client.say(url)
+		
 
 client.run(os.getenv('Token'))
 

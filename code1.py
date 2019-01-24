@@ -15,7 +15,7 @@ import json
 import aiohttp
 
 Forbidden= discord.Embed(title="Permission Denied", description="1) Please check whether you have permission to perform this action or not. \n2) Please check whether my role has permission to perform this action in this channel or not. \n3) Please check my role position.", color=0x00ff00)
-client = commands.Bot(description="MultiVerse Official Bot", command_prefix=commands.when_mentioned_or("p!"), pm_help = True)
+client = commands.Bot(description="TEST Official Bot", command_prefix=commands.when_mentioned_or("p!"), pm_help = True)
 client.remove_command('help')
 
 @client.event
@@ -24,7 +24,7 @@ async def on_ready():
 	print('--------')
 	print('--------')
 	print('Started pubg') #add_your_bot_name_here
-	return await client.change_presence(game=discord.Game(name='Fortnite')) #add_your_bot_status_here
+	return await client.change_presence(game=discord.Game(name='BOT BETA TESTING')) #add_your_bot_status_here
 
 
 
@@ -45,19 +45,6 @@ async def help(ctx):
  
 
 
-
-
-@client.command(pass_context=True)
-async def tweet(ctx, usernamename:str, *, txt:str):
-    url = f"https://nekobot.xyz/api/imagegen?type=tweet&username={usernamename}&text={txt}"
-    async with aiohttp.ClientSession() as cs:
-        async with cs.get(url) as r:
-            res = await r.json()
-            r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
-            embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
-            embed.set_image(url=res['message'])
-            embed.title = "{} twitted: {}".format(usernamename, txt)
-            await client.say(embed=embed)
 
 
 client.run(os.getenv('Token'))

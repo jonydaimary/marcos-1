@@ -12,18 +12,52 @@ import time
 import datetime
 import requests
 import json
-import aiohttp	
+import aiohttp
 
-##PREFIX##
 Forbidden= discord.Embed(title="Permission Denied", description="1) Please check whether you have permission to perform this action or not. \n2) Please check whether my role has permission to perform this action in this channel or not. \n3) Please check my role position.", color=0x00ff00)
-bot = commands.Bot(description="marcos Official Bot", command_prefix=commands.when_mentioned_or("!!"), pm_help = True)
-bot.remove_command('help')
+client = commands.Bot(description="MultiVerse Official Bot", command_prefix=commands.when_mentioned_or("p!"), pm_help = True)
+client.remove_command('help')
 
-
-##BOT IS READY## 
-@bot.event
+@client.event
 async def on_ready():
-    print("Bot Is Online! And Ready To Spam")
+	print('Logged in as '+client.user.name+'')
+	print('--------')
+	print('--------')
+	print('Started pubg') #add_your_bot_name_here
+	return await client.change_presence(game=discord.Game(name='Fortnite')) #add_your_bot_status_here
+
+
+
+
+
+@client.command(pass_context = True)
+async def help(ctx):
+    if ctx.message.author.bot:
+      return
+    else:
+      author = ctx.message.author
+      r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
+      embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
+      embed.set_author(name='💁Help')
+      embed.add_field(name = '⚙commands,',value ='p!tweet <name><text>, p!lovedetect @user1@user2, p!ping, p!setupwelcome, p!virus @user<text>, p!meme',inline = False)
+      dmmessage = await client.send_message(author,embed=embed)
+      await client.say('Check your direct messages')
+ 
+
+
+
+
+@client.command(pass_context=True)
+async def tweet(ctx, usernamename:str, *, txt:str):
+    url = f"https://nekobot.xyz/api/imagegen?type=tweet&username={usernamename}&text={txt}"
+    async with aiohttp.ClientSession() as cs:
+        async with cs.get(url) as r:
+            res = await r.json()
+            r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
+            embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
+            embed.set_image(url=res['message'])
+            embed.title = "{} twitted: {}".format(usernamename, txt)
+            await client.say(embed=embed)
 
 
 client.run(os.getenv('Token'))

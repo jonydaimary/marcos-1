@@ -61,9 +61,9 @@ async def membercount(ctx, *args):
     
     em = Embed(title="Membercount")
     em.description =    "**\n" \
-                        "Members:    (%s)\n" \
-                        "  Users:    (%s)\n" \
-                        "  Bots:     (%s)\n" \
+                        "Members:    %s\n" \
+                        "  Users:    %s\n" \
+                        "  Bots:     %s\n" \
                         "Created:   %s\n" \
                         "**" % (membs, membs_on, users, users_on, bots, bots_on, created)
 

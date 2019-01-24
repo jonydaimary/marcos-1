@@ -51,7 +51,7 @@ async def flipcoin(ctx):
     color = discord.Color(value=0xf9fcfc)
     em=discord.Embed(color=color, title='Flipped a coin!')
     em.description = random.choice(choices)
-    embed.set_footer(text=f"Playing by  {ctx.message.author.name}", icon_url=f"{ctx.message.author.avatar_url}")
+    embed.set_footer(text=f"Playing by  {ctx.message.author.name}")
     embed.timestamp = datetime.datetime.utcnow()
     await client.say(embed=em)
 	     

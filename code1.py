@@ -37,7 +37,7 @@ async def announce(ctx, channel: discord.Channel=None, *, msg: str):
 	
    
 @client.command(pass_context=True)
-async def kiss(ctx, user: discord.Member):
+async def kiss(ctx, user: discord.Member = None):
     if user == None:
         await client.say("```Proper usage is\n\n!!kiss <mention a user>```")
     if user.id == ctx.message.author.id:
@@ -48,6 +48,18 @@ async def kiss(ctx, user: discord.Member):
         embed.set_image(url=random.choice(randomurl))
         await client.say(embed=embed)
  
+@client.command(pass_context=True)
+async def hug(ctx, user: discord.Member = None):
+    if user == None:
+        await client.say("```Proper usage is\n\n!!hug <mention a user>```")
+    if user.id == ctx.message.author.id:
+        await client.say("{} Wanted to hug himself/herself , good luck on that you will look like an idiot trying to do it".format(user.mention))
+    else:
+        randomurl = ["http://gifimage.net/wp-content/uploads/2017/09/anime-hug-gif-5.gif", "https://media1.tenor.com/images/595f89fa0ea06a5e3d7ddd00e920a5bb/tenor.gif?itemid=7919037", "https://media.giphy.com/media/NvkwNVuHdLRSw/giphy.gif"]
+        embed = discord.Embed(title=f"{user.name} You just got a hug from {ctx.message.author.name}", color=0Xf9fcfc)
+        embed.set_image(url=random.choice(randomurl))
+        await client.say(embed=embed)    
+
 
 client.run(os.getenv('Token'))
 

@@ -44,6 +44,15 @@ async def rolldice(ctx):
     em = discord.Embed(color=color, title='Rolled! (1 6-sided die)', description=random.choice(choices))
     await client.send_typing(ctx.message.channel)
     await client.say(embed=em)
+
+@client.command(pass_context = True)
+async def flipcoin(ctx):
+    choices = ['Heads', 'Tails', 'Coin self-destructed']
+    color = discord.Color(value=0x00ff00)
+    em=discord.Embed(color=color, title='Flipped a coin!')
+    em.description = random.choice(choices)
+    await client.send_typing(ctx.message.channel)
+    await client.say(embed=em)
 	     
 
 

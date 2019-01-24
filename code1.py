@@ -27,7 +27,11 @@ async def on_ready():
 
 
 
-
+async def req(self, url):
+    res = await self.bot.session.get(f"https://nekos.life/api/v2/img/{url}")
+    res = await res.json()
+    return box.Box(res)
+  
 
 
 

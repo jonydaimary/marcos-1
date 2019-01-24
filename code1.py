@@ -31,7 +31,7 @@ async def on_ready():
 async def dog(ctx):
     await client.send_typing(ctx.message.channel)
     try:
-        url = "f"https://nekos.life/api/v2/img/boobs"
+        url = "https://nekos.life/api/v2/img/boobs"
         response = requests.get(url)
         data = json.loads(response.text)
         embed=discord.Embed(color=0Xf9fcfc)

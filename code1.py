@@ -27,6 +27,28 @@ async def on_ready():
 
 
 
+@client.command(pass_context = True)
+async def hack(ctx, user: discord.Member):
+    """Hack someone's account! Try it!"""
+    text = await Utils.clean_text(ctx, str(user))
+    msg = await ctx.send(f"Hacking! Target: {text}")
+    await asyncio.sleep(2)
+    await msg.edit(content="Accessing Discord Files... [▓▓    ]")
+    await asyncio.sleep(2)
+    await msg.edit(content="Accessing Discord Files... [▓▓▓   ]")
+    await asyncio.sleep(2)
+    await msg.edit(content="Accessing Discord Files... [▓▓▓▓▓ ]")
+    await asyncio.sleep(2)
+    await msg.edit(content="Accessing Discord Files COMPLETE! [▓▓▓▓▓▓]")
+    await asyncio.sleep(2)
+    await msg.edit(content="Retrieving Login Info... [▓▓▓    ]")
+    await asyncio.sleep(3)
+    await msg.edit(content="Retrieving Login Info... [▓▓▓▓▓ ]")
+    await asyncio.sleep(3)
+    await msg.edit(content="Retrieving Login Info... [▓▓▓▓▓▓ ]")
+    await asyncio.sleep(4)
+    await msg.edit(content=f"An error has occurred hacking {text}'s account. Please try again later. ❌")   
+   
 
 
 

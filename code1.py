@@ -30,7 +30,7 @@ async def on_ready():
 async def announce(ctx, channel: discord.Channel=None, *, msg: str):
     if channel is None:
         await client.say(" ```Proper usage is\n\nannounce<channel><matter>```")
-        return
+    else:
         embed=discord.Embed(title="Announcement", description="{}".format(msg), color = 0xf9fcfc)
         await client.send_message(channel, embed=embed)
         await client.delete_message(ctx.message)

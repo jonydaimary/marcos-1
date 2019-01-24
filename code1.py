@@ -35,17 +35,21 @@ async def announce(ctx, channel: discord.Channel=None, *, msg: str):
         await client.send_message(channel, embed=embed)
         await client.delete_message(ctx.message)
 	
-   
 @client.command(pass_context = True)
 async def avatar(ctx, user: discord.Member=None):
     if user is None:
-        embed = discord.Embed(color=0Xf9fcfc)
-        embed.add_field(name='User: {}'.format(ctx.message.author.name), value='Avatar:', inline=True)
+        embed = discord.Embed(title='User: {}'.format(ctx.message.author.name), color=0Xf9fcfc)
         embed.set_image(url = ctx.message.author.avatar_url)
         embed.set_footer(text=f"Requested by {ctx.message.author.name}", icon_url=f'{ctx.message.author.avatar_url}')
         embed.timestamp = datetime.datetime.utcnow()
         await client.say(embed=embed)
-   
+    else:
+        embed = discord.Embed(title='User: {}'.format(ctx.message.author.name), color=0Xf9fcfc)
+        embed.set_footer(text=f"Requested by {ctx.message.author.name}", icon_url=f"{ctx.message.author.avatar_url}")
+        embed.timestamp = datetime.datetime.utcnow()
+        embed.set_image(url = user.avatar_url)
+        await client.say(embed=embed)
+	    
 	     
 
 

@@ -35,7 +35,7 @@ async def boobs(self, ctx):
     if not ctx.channel.nsfw:
         return await ctx.send("Are you trying to **kill innocent people's eyes**?? I think not!")
 
-    res = await self.req(f"https://nekos.life/api/v2/img/boobs")
+    res = await self.req(f"https://nekos.life/api/v2/img/{boobs}")
     embed = discord.Embed(color=0Xf9fcfc, title="Boobs :eggplant: ")
     embed.set_image(url=res.url)
     embed.set_footer(text=f"Requested by: {str(ctx.author)} | Powered by nekos.life", icon_url=ctx.author.avatar_url)

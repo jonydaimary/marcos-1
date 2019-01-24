@@ -28,7 +28,7 @@ async def on_ready():
 
 
 @client.command(pass_context=True, no_pm=True, aliases=["Dog"])
-async def dog(ctx):
+async def boobs(ctx):
     await client.send_typing(ctx.message.channel)
     try:
         url = "https://nekos.life/api/v2/img/boobs"

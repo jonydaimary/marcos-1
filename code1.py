@@ -39,7 +39,7 @@ async def announce(ctx, channel: discord.Channel=None, *, msg: str):
 @client.command(pass_context=True)
 async def hug(ctx, user: discord.Member = None):
     if user == None:
-        await client.say(f"{ctx.message.author.mention} ```Proper usage is\n\n>slap <mention a user>```")
+        await client.say("```Proper usage is\n\n!!hug <mention a user>```")
     if user.id == ctx.message.author.id:
         await client.say("{} Wanted to hug himself/herself , good luck on that you will look like an idiot trying to do it".format(user.mention))
     else:

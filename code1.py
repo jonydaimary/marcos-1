@@ -60,12 +60,12 @@ async def membercount(ctx, *args):
     created = str(g.created_at)
     
     em = Embed(title="Membercount")
-    em.description =    "```\n" \
+    em.description =    "**\n" \
                         "Members:   %s (%s)\n" \
                         "  Users:   %s (%s)\n" \
                         "  Bots:    %s (%s)\n" \
                         "Created:   %s\n" \
-                        "```" % (membs, membs_on, users, users_on, bots, bots_on, created)
+                        "**" % (membs, membs_on, users, users_on, bots, bots_on, created)
 
     await client.send_message(ctx.message.channel, embed=em)
 

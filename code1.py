@@ -35,7 +35,6 @@ async def announce(ctx, channel: discord.Channel=None, *, msg: str):
         await client.send_message(channel, embed=embed)
         await client.delete_message(ctx.message)
 	
-
 @client.command(pass_context=True, aliases=['server'])
 @commands.has_permissions(kick_members=True)
 async def membercount(ctx, *args):
@@ -60,15 +59,14 @@ async def membercount(ctx, *args):
     created = str(g.created_at)
     
     em = Embed(title="Membercount")
-    em.description =    "**\n" \
-                        "Members:    %s\n" \
-                        "  Users:    %s\n" \
-                        "  Bots:     %s\n" \
+    em.description =    "```\n" \
+                        "Members:   %s (%s)\n" \
+                        "  Users:   %s (%s)\n" \
+                        "  Bots:    %s (%s)\n" \
                         "Created:   %s\n" \
-                        "**" % (membs, membs_on, users, users_on, bots, bots_on, created)
+                        "```" % (membs, membs_on, users, users_on, bots, bots_on, created)
 
     await client.send_message(ctx.message.channel, embed=em)
-
 
 client.run(os.getenv('Token'))
 

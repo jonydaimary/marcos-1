@@ -25,16 +25,15 @@ async def on_ready():
 	print('Started pubg') #add_your_bot_name_here
 	return await client.change_presence(game=discord.Game(name='BOT BETA TESTING')) #add_your_bot_status_here
 
+				
 @client.command(pass_context = True)
 @commands.has_permissions(administrator=True) 
 async def announce(ctx, channel: discord.Channel=None, *, msg: str):
     if channel == None:
         await client.say(" ```Proper usage is\n\nannounce<channel><matter>```")
-        embed=discord.Embed(title="Announcement", description="{}".format(msg), color = 0xf9fcfc)
-        await client.send_message(channel, embed=embed)
-        await client.delete_message(ctx.message)
-
-
+          embed=discord.Embed(title="Announcement", description="{}".format(msg), color = 0xf9fcfc)
+          await client.send_message(channel, embed=embed)
+          await client.delete_message(ctx.message)
 
    
 

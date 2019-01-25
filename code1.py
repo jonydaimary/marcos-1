@@ -26,11 +26,6 @@ async def on_ready():
 	return await client.change_presence(game=discord.Game(name='BOT BETA TESTING')) #add_your_bot_status_here
 
 
-async def req(self, url):
-    res = await self.bot.session.get(f"https://nekos.life/api/v2/img/{url}")
-    res = await res.json()
-    return box.Box(res)
-  
 
 
 	

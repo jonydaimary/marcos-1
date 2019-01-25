@@ -34,7 +34,6 @@ async def meme(ctx):
     embed = discord.Embed(title="meme", color=0XF9FCFC)
     async with aiohttp.ClientSession() as session:
         async with session.get("https://nekos.life/api/v2/img/boobs") as r:
-            data = await r.json()          
             embed.set_footer(text=f'Requested by: {ctx.message.author.display_name}', icon_url=f'{ctx.message.author.avatar_url}')
             embed.timestamp = datetime.datetime.utcnow()
             await client.say(embed=embed)	

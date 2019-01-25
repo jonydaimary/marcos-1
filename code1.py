@@ -27,6 +27,11 @@ async def on_ready():
 
 
 
+@client.command(pass_context = True, aliases=["server"])
+async def serverinvite(ctx):
+    await client.say("boobgggggg \n   fsdfsdf  ffsfsf \nfdddsfsdfsf      \nfsfsfsdfsfsfs")
+
+
 	
 	
 

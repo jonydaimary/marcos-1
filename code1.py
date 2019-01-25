@@ -26,19 +26,25 @@ async def on_ready():
 	return await client.change_presence(game=discord.Game(name='BOT BETA TESTING')) #add_your_bot_status_here
 
 
+async def req(self, url):
+    res = await self.bot.session.get(f"https://nekos.life/api/v2/img/{url}")
+    res = await res.json()
+    return box.Box(res)
+  
+
 @client.command(pass_context = True)
-async def announce(ctx, channel: discord.Channel=None, *, msg: str=None):
-    member = ctx.message.author
-    if channel is None or msg is None:
-        await client.say('```Proper usage is \n\n!!announce #channel text here```')
-        return
-    else:
-        if member.server_permissions.administrator == False:
-            await client.say('**You do not have permission to use this command**')
-            return
-        else:
-            await client.send_message(channel, msg)
-            await client.delete_message(ctx.message)
+async def boobs(self, ctx):
+    """WARNING: NSFW command. Gets pictures of boobs."""
+    if not ctx.channel.nsfw:
+        return await ctx.send("Are you trying to **kill innocent people's eyes**?? I think not!")
+    if not ctx.channel.nsfw:
+        return await ctx.send("Are you trying to **kill innocent people's eyes**?? I think not!")
+
+    res = await self.req("boobs")
+    embed = discord.Embed(color=0Xf9fcfc, title="Boobs :eggplant: ")
+    embed.set_image(url=res.url)
+    embed.set_footer(text=f"Requested by: {str(ctx.author)} | Powered by nekos.life", icon_url=ctx.author.avatar_url)
+    await ctx.send(embed=embed)
 	
 	
 

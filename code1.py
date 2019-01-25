@@ -30,7 +30,7 @@ async def on_ready():
 async def announce(ctx, channel: discord.Channel=None, *, msg: str=None):
     member = ctx.message.author
     if channel is None or msg is None:
-        await client.say('Invalid args. Use this command like ``mv!announce #channel text here``')
+        await client.say('```Proper usage is \n\n!!announce #channel text here```')
         return
     else:
         if member.server_permissions.administrator == False:

@@ -37,9 +37,11 @@ async def announce(ctx, channel: discord.Channel=None, *, msg: str=None):
             await client.say('**You do not have permission to use this command**')
             return
         else:
-            embed=discord.Embed(title="Announcement", description="{}".format(msg), color = 0xf9fcfc)
-            await client.send_message(channel, embed=embed)
+            await client.send_message(channel, msg)
             await client.delete_message(ctx.message)
+	
+	
+
 	
 client.run(os.getenv('Token'))
 

@@ -23,7 +23,7 @@ async def on_ready():
 	print('--------')
 	print('--------')
 	print('Started pubg') #add_your_bot_name_here
-	return await client.change_presence(game=discord.Game(name='BOT BETA TESTING')) #add_your_bot_status_here
+	return await client.change_presence(game=discord.Game(name='BETA VERSION', type=2)) #add_your_bot_status_here
 
 
 

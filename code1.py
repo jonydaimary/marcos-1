@@ -29,7 +29,11 @@ async def on_ready():
 	print('Started pubg') #add_your_bot_name_here
 	return await client.change_presence(game=discord.Game(name='BETA VERSION', type=2)) #add_your_bot_status_here
 
- 
+@client.command(pass_context = True)
+async def lovedetect(ctx, channel: discord.Channel=None, *, msg: str=None):
+    member = ctx.message.author
+    if channel is None or msg is None:
+        await client.say('Proper usage is \n!!lovedetect @user1 @user2') 
 	
 	
 client.run(os.getenv('Token'))

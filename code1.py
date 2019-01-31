@@ -14,7 +14,7 @@ import requests
 import json
 import aiohttp		
 
-client = commands.Bot(description="marcos bot", command_prefix=commands.when_mentioned_or("!!"), pm_help = True)
+client = commands.Bot(description="marcos bot", command_prefix=commands.when_mentioned_or("*"), pm_help = True)
 
 @client.event
 async def on_ready():

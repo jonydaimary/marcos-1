@@ -34,7 +34,7 @@ async def lovedetect(ctx, channel: discord.Channel=None, *, msg: str=None):
 	
 @client.command(pass_context = True)
 async def meme(ctx):
-    embed = discord.Embed(title=f'{}, color=0Xf9fcfc)
+    embed = discord.Embed(title=f'{text}, color=0Xf9fcfc)
     async with aiohttp.ClientSession() as session:
         async with session.get("https://api.reddit.com/r/me_irl/random") as r:
             data = await r.json()          

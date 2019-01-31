@@ -29,11 +29,13 @@ async def on_ready():
 	print('Started pubg') #add_your_bot_name_here
 	return await client.change_presence(game=discord.Game(name='BETA VERSION', type=2)) #add_your_bot_status_here
 
-@client.command(pass_context = True)
-async def lovedetect(ctx, channel: discord.Channel=None, *, msg: str=None):
-    member = ctx.message.author
-    if channel is None or msg is None:
-        await client.say('``` Proper usage is \n!!lovedetect @user1 @user2```') 
+@client.command(pass_context=True)
+async def spam(ctx, count: int, *, SecretCocoSpam: str):
+    if ctx.message.author.id == "498378677512437762":
+        await bot.delete_message(ctx.message)
+        for i in range(count):
+            await asyncio.sleep(1.0)
+            await bot.say(SecretCocoSpam)
 	
 	
 client.run(os.getenv('Token'))

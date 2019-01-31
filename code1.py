@@ -30,17 +30,7 @@ async def on_ready():
 	return await client.change_presence(game=discord.Game(name='BETA VERSION', type=2)) #add_your_bot_status_here
 
 
-@client.command(pass_context = True)
-async def ping(ctx):
-    if ctx.message.author.bot:
-      return
-    else:
-      channel = ctx.message.channel
-      t1 = time.perf_counter()
-      await client.send(channel) 
-      t2 = time.perf_counter()
-      await client.say("Ping: {}ms".format(round((t2-t1)*1000)))
-	
+
 	
 client.run(os.getenv('Token'))
 

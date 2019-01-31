@@ -25,7 +25,7 @@ async def on_ready():
     print('Created by marcos')
     client.loop.create_task(status_task())
 
-@bot.command(pass_context = True)
+@client.command(pass_context = True)
 async def lovedetect(ctx, channel: discord.Channel=None, *, msg: str=None):
     member = ctx.message.author
     if channel is None or msg is None:

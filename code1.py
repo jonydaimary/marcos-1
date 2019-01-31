@@ -33,7 +33,7 @@ async def on_ready():
 async def lovedetect(ctx, channel: discord.Channel=None, *, msg: str=None):
     member = ctx.message.author
     if channel is None or msg is None:
-        await client.say('Proper usage is \n!!lovedetect @user1 @user2') 
+        await client.say('```Proper usage is \n!!lovedetect @user1 @user2```') 
 	
 	
 client.run(os.getenv('Token'))

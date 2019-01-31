@@ -30,16 +30,39 @@ async def on_ready():
 	return await client.change_presence(game=discord.Game(name='BETA VERSION', type=2)) #add_your_bot_status_here
 
 
-@client.command(pass_context = True)
-async def dc(ctx):
-    choices = ['https://media.giphy.com/media/uDPSXySAEDv56/giphy.gif', 'https://media.giphy.com/media/26vIg1DlkNdJr65q0/giphy.gif', 'https://media.giphy.com/media/jcIRoyJKQG3za/giphy.gif', 'https://media.giphy.com/media/26xBLVi4RuhYmV6zm/giphy.gif', 'https://media.giphy.com/media/xUOwGfcrlRjKjs2sSI/giphy.gif', 'https://media.giphy.com/media/l41Yq5KYEmbxFaeVq/giphy.gif', 'https://media.giphy.com/media/3o7abJW5ZuiByDelji/giphy.gif', 'https://media.giphy.com/media/xU67CtAMi8f5K/giphy.gif', 'https://media.giphy.com/media/VXQuKHDhTIBWM/giphy.gif']
-    embed=discord.Embed(title="Hello kryptonian... Here's your GIF...", color=0XFF69B4)
-    embed.set_image(url=random.choice(choices))
-    embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/516953091656908810/519072295080296469/Joker.png')
-    embed.set_footer(text=f'Requested by {ctx.message.author.name}', icon_url=f'{ctx.message.author.avatar_url}')
-    embed.timestamp = datetime.datetime.utcnow()
-    await client.send_message(ctx.message.channel, embed=embed)
+@client.command(pass_context=True, aliases=['members'])
+@commands.has_permissions(kick_members=True)
+async def membercount(ctx, *args):
+    """
+    Shows stats and information about current guild.
+    ATTENTION: Please only use this on your own guilds or with explicit
+    permissions of the guilds administrators!
+    """
+    if ctx.message.channel.is_private:
+        await bot.delete_message(ctx.message)
+        return
 
+    g = ctx.message.server
+
+    gid = g.id
+    membs = str(len(g.members))
+    membs_on = str(len([m for m in g.members if not m.status == Status.offline]))
+    users = str(len([m for m in g.members if not m.bot]))
+    users_on = str(len([m for m in g.members if not m.bot and not m.status == Status.offline]))
+    bots = str(len([m for m in g.members if m.bot]))
+    bots_on = str(len([m for m in g.members if m.bot and not m.status == Status.offline]))
+    created = str(g.created_at)
+    
+    em =Embed(title="membercount")
+    em.description =    "**\n" \
+                        "Members:   %s (%s)\n" \
+                        "  Users:   %s (%s)\n" \
+                        "  Bots:    %s (%s)\n" \
+                        "Created:   %s\n" \
+                        "**" % (membs, membs_on, users, users_on, bots, bots_on, created)
+
+    await client.send_message(ctx.message.channel, embed=em)	 
+	
 	
 client.run(os.getenv('Token'))
 

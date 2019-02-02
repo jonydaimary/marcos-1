@@ -36,8 +36,8 @@ async def lovedetect(ctx, channel: discord.Channel=None, *, msg: str=None):
 @client.command(pass_context=True, aliases=["Help"])
 async def help(ctx):
     embed = discord.Embed(title="command Prefix: !! ", color=0Xf9fcfc)
-    embed.add_field(name="__**administrator commands**__", value="`serverinfo            :`server's information (Administrator). \n`membercount         :`how many servers mamber in. \n`poll` - Polling (Administrator). \n`ban` - this will ban the user. \n`clear` - will clear messages(Administrator). \n`announce` - To announce the entered **#channel** n **matter** (Administrator). ", inline=True)
-    embed.add_field(name="__**music commands**__", value="`play` - This will play the audio you want. \n`pause` - will pause the audio. \n`resume` - This will resume the audio. \n`skip` - will skip the music. \n`stop` -  will Bot disconnected. \n`song` - To Check The Current playing song. ") 
+    embed.add_field(name="__**administrator commands**__", value="`serverinfon  :` server's information (Administrator). \n`membercount  :`how many servers mamber in. \n`poll  :` Polling (Administrator). \n`ban  :` ban the user. \n`clear  :` clear messages(Administrator). \n`announce  :` To announce the entered **#channel** n **matter** (Administrator). ", inline=True)
+    embed.add_field(name="__**music commands**__", value="`play  :` play the music you want. \n`pause  :` will pause the audio. \n`resume  :` will resume the audio. \n`skip` - will skip the music. \n`stop` -  will Bot disconnected. \n`song` - To Check The Current playing song. ") 
     embed.add_field(name="__**animals commands**__", value="`fox` - This will show a fox images. \n`dog` - This will show a dog images. \n`cat` - this will show a cat images. \n`bird` - this will show a bird images. ")
     embed.add_field(name="__**games commands**__", value="`rps` - This will play the rock, paper and scissors.\n`rolldice` - This will roll the dice and get 1 to 6 numbers. \n`flipcoin` - This will flip the coin. ")
     embed.add_field(name="__**fun commands**__", value="`virus` - This will virus the user. \n`jpke` - this will tell you a joke.")

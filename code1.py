@@ -37,7 +37,7 @@ async def lovedetect(ctx, channel: discord.Channel=None, *, msg: str=None):
 async def help(ctx):
     embed = discord.Embed(title="command Prefix: !! ", color=0Xf9fcfc)
     embed.add_field(name="__**administrator commands**__", value="`serverinfon  :` server's information (Administrator). \n`membercount  :` how many servers mamber in. \n`poll  :` Polling (Administrator). \n`ban  :` ban the user. \n`clear  :` clear messages(Administrator). \n`announce  :` To announce the entered **#channel** n **matter** (Administrator). ", inline=True)
-    embed.add_field(name="__**music commands**__", value="`play  :` play the music you want. \n`pause  :` will pause the audio. \n`resume  :` will resume the audio. \n`skip` - will skip the music. \n`stop` -  will Bot disconnected. \n`song` - To Check The Current playing song. ") 
+    embed.add_field(name="__**music commands**__", value="`play  :` play the music you want. \n`pause  :` will pause the audio. \n`resume  :` will resume the audio. \n`skip  :` will skip the music. \n`stop  :` will Bot disconnected. \n`song  :` To Check The Current playing song. ") 
     embed.add_field(name="__**animals commands**__", value="`fox  :` fox images. \n`dog  :` dog images. \n`cat  :` cat images. \n`bird  :` bird images. ")
     embed.add_field(name="__**games commands**__", value="`rps  :` play the rock, paper and scissors.\n`rolldice  :` roll the dice and get 1 to 6 numbers. \n`flipcoin  :` flip the coin. ")
     embed.add_field(name="__**fun commands**__", value="`virus  :` virus the user. \n`jpke  :` tell you a joke. ")

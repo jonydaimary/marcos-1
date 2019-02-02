@@ -36,7 +36,7 @@ async def lovedetect(ctx, channel: discord.Channel=None, *, msg: str=None):
 @client.command(pass_context=True, aliases=["Help"])
 async def help(ctx):
     embed = discord.Embed(title="command Prefix: !! ", color=0Xf9fcfc)
-    embed.add_field(name="__administrator commands__", value="`serverinfon  :` server's information (Administrator). \n`membercount  :` how many servers mamber in. \n`poll  :` Polling (Administrator). \n`ban  :` ban the user. \n`clear  :` clear messages(Administrator). \n`announce  :` To announce the entered **#channel** n **matter** (Administrator). ", inline=True)
+    embed.add_field(name="__administrator commands__", value="`serverinfon  :` server's information . \n`membercount  :` how many servers mamber in. \n`poll  :` Polling . \n`ban  :` ban the user. \n`clear  :` clear messages. \n`announce  :` To announce the entered **#channel** n **matter** . ", inline=True)
     embed.add_field(name="__fun commands__", value="`virus  :` virus. \n`jpke  :` tell you a joke ! . ")	
     embed.add_field(name="__music commands__", value="`play  :` play the music you want. \n`pause  :` will pause the audio. \n`resume  :` will resume the audio. \n`skip  :` will skip the music. \n`stop  :` will Bot disconnected. \n`song  :` To Check The Current playing song. ") 
     embed.add_field(name="__animals commands__", value="`fox  :` fox images. \n`dog  :` dog images. \n`cat  :` cat images. \n`bird  :` bird images. ")

@@ -48,7 +48,7 @@ async def meme(ctx):
             embed.set_image(url=data[0]["data"]["children"][0]["data"]["url"])
             embed.set_footer(text=f'Requested by: {ctx.message.author.display_name}', icon_url=f'{ctx.message.author.avatar_url}')
             embed.timestamp = datetime.datetime.utcnow()
-            await client.send_message(embed=embed)
+            await ctx.send(embed=embed)
 	
 @client.command(pass_context=True)
 async def test(ctx):

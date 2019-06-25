@@ -118,23 +118,25 @@ async def slap(ctx, user: discord.Member = None):
 
 @client.command(pass_context = True)
 async def botinfo(ctx):
-    User = await client.fetch_user('472128507150073871')
-    User2 = await client.fetch_user('498378677512437762')
-    User3 = await client.fetch_user('500219510079356928')
-    User4 = await client.fetch_user("400255149014122496")
-    embed=discord.Embed(title="Details of this BOT...", description="Here are the details of this BOT below", color=0XFF69B4)
-    embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/516953091656908810/519072295080296469/Joker.png')
+    User = await client.fetch_user('498378677512437762')
+    User2 = await client.fetch_user('472128507150073871')
+    embed = discord.Embed(title="CRY N____ information", color=0Xf9fcfc)
+    embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/592605488265428992/593094130977079308/mimikyu-2-622x350.jpg")
     embed.set_footer(text=f'Requested by {ctx.message.author.name}', icon_url=f'{ctx.message.author.avatar_url}')
     embed.timestamp = datetime.datetime.utcnow()
     embed.set_author(name=f"This is Official BOT of {ctx.guild.name} server")
+    embed.add_field(name="__**Bot name**___", value="DAB", inline = True)
+    embed.add_field(name="__**Bot id**__", value="520267296506249216", inline = True)
+    embed.add_field(name="__**Bot prefix**__", value="!!", inline = True)
+    embed.add_field(name="__**Bot language**__", value="Python", inline = True)
     embed.add_field(name="__**Creator**__", value=User.mention, inline = True)
-    embed.add_field(name="__**Special Thanks To**__", value=f"{User2.mention} \n {User3.mention} \n {User4.mention}")
-    embed.add_field(name="**Currently connected servers**", value=str(len(client.guilds)), inline = True)
-    embed.add_field(name="**Currently connected users**", value=str(len(set(client.get_all_members()))), inline = True)
+    embed.add_field(name="__**Special Thanks To**__", value=User2.mention, inline = True)
+    embed.add_field(name="__**Bot servers**__", value=str(len(client.servers)), inline = True)
+    embed.add_field(name="__**Bot users**__", value=str(len(set(client.get_all_members()))), inline = True)
     embed.add_field(name="If you have any queries about this BOT, DM me...", value=User.mention)
     embed.timestamp = datetime.datetime.utcnow()
-    await ctx.send(embed=embed)
-	
+    await ctx.send(embed=embed)	
+
 	
 	
 @client.command(pass_context=True, aliases=["Help"])

@@ -19,14 +19,14 @@ Forbidden= discord.Embed(title="Permission Denied", description="1) Please check
 client = commands.Bot(description="marcos bot", command_prefix=commands.when_mentioned_or("!!"), pm_help = True)
 
 
-async def status_task():
+"""async def status_task():
     while True:
         await client.change_presence(game=discord.Game(name='!!help | marcos.#0290', type=2)) 
         await asyncio.sleep(120)
         await client.change_presence(game=discord.Game(name='BETA VERSION')) 
         await asyncio.sleep(120)
         await client.change_presence(game=discord.Game(name='with ' +str(len(set(client.get_all_members())))+' users', type=3))
-        await asyncio.sleep(120)
+        await asyncio.sleep(120)"""
 		
 	
 @client.event

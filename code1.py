@@ -19,6 +19,7 @@ client = commands.Bot(description="marcos bot", command_prefix=commands.when_men
 
 client.remove_command('help')
 
+
 async def status_task():
     while True:
         await client.change_presence(game=discord.Game(name='!!help | marcos.#0290', type=2)) 
@@ -27,9 +28,7 @@ async def status_task():
         await asyncio.sleep(120)
         await client.change_presence(game=discord.Game(name='with ' +str(len(set(client.get_all_members())))+' users', type=3))
         await asyncio.sleep(120)
-	
-	
-	
+		
 	
 @client.event
 async def on_ready():
@@ -41,6 +40,4 @@ async def on_ready():
     client.loop.create_task(status_task())
 	
 	
-	
-
 client.run(os.getenv('Token')) 

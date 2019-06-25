@@ -59,7 +59,7 @@ async def test(ctx):
 @client.command(pass_context = True)
 @commands.has_permissions(manage_messages = True)
 async def clear(ctx, number: int):
-  purge = await ctx.purge(limit = number+1)
+  await ctx.purge(limit=number+1)
 
 
 

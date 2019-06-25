@@ -56,6 +56,12 @@ async def meme(ctx):
 async def test(ctx):
 	await ctx.send("Hello")
 	
+@client.command(pass_context = True)
+@commands.has_permissions(manage_messages = True)
+async def clear(ctx, number: int):
+  purge = await client.purge_from(ctx.message.channel, limit = number+1)	
+
+	
 @client.command(pass_context=True, aliases=["Help"])
 async def help(ctx):
     embed = discord.Embed(color=0Xf9fcfc)

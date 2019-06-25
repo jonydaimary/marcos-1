@@ -131,7 +131,7 @@ async def botinfo(ctx):
     embed.add_field(name="__**Bot language**__", value="Python", inline = True)
     embed.add_field(name="__**Creator**__", value=User.mention, inline = True)
     embed.add_field(name="__**Special Thanks To**__", value=User2.mention, inline = True)
-    embed.add_field(name="__**Bot servers**__", value=str(len(client.servers)), inline = True)
+    embed.add_field(name="__**Bot servers**__", value=str(len(client.guilds)), inline = True)
     embed.add_field(name="__**Bot users**__", value=str(len(set(client.get_all_members()))), inline = True)
     embed.add_field(name="If you have any queries about this BOT, DM me...", value=User.mention)
     embed.timestamp = datetime.datetime.utcnow()

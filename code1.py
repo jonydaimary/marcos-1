@@ -50,7 +50,7 @@ async def meme(ctx):
             embed.timestamp = datetime.datetime.utcnow()
             await client.send_message(embed=embed)
 	
-@client.command(pass_context=Ture)
+@client.command(pass_context=True)
 async def test(ctx):
 	await ctx.send("Hello")
 	

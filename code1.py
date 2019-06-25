@@ -69,9 +69,8 @@ async def help(ctx):
     embed.add_field(name="__Images commands__", value="`meme  :` meme image. \n`avatar  :` Avatar. \n`dc  :` DC GIF \n`marvel  :` Marvel GIF. \n`joker  :` Joker GIF. \n`slap  :` slap the user. \n`hug  :`  hug a user. \n`kiss  :` kiss the user. \n`lovedetect  :` lovedetect.  \n\n__support server__ - [click here](https://discord.gg/dFM9HG6) \n__bot invite__ - [click here](https://discordapp.com/api/oauth2/authorize?client_id=520267296506249216&permissions=8&scope=bot) \n\n__**more feautures coming soon...**__")
     embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/537866862600650773/541121180921495554/maxresdefault.jpg') 
     embed.set_footer(text=f"Requested by {ctx.message.author.name}", icon_url=f"{ctx.message.author.avatar_url}")
-    embed.timestamp = datetime.datetime.utcnow()
-    await client.send(ctx.message.channel, embed=embed)    	
-	
+    embed.timestamp = datetime.datetime.utcnow()  	
+    await ctx.send(embed=embed)
 	
 
 client.run(os.getenv('Token')) 

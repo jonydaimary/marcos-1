@@ -70,7 +70,7 @@ async def help(ctx):
     embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/537866862600650773/541121180921495554/maxresdefault.jpg') 
     embed.set_footer(text=f"Requested by {ctx.message.author.name}", icon_url=f"{ctx.message.author.avatar_url}")
     embed.timestamp = datetime.datetime.utcnow()
-    await client.send_message(ctx.message.channel, embed=embed)    	
+    await client.send(ctx.message.channel, embed=embed)    	
 	
 	
 

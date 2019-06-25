@@ -125,7 +125,7 @@ async def botinfo(ctx):
     embed.set_footer(text=f'Requested by {ctx.message.author.name}', icon_url=f'{ctx.message.author.avatar_url}')
     embed.timestamp = datetime.datetime.utcnow()
     embed.set_author(name=f"This is Official BOT of {ctx.guild.name} server")
-    embed.add_field(name="__**Bot name**___", value="DAB", inline = True)
+    embed.add_field(name="__**Bot name**___", value="CRY N____", inline = True)
     embed.add_field(name="__**Bot id**__", value="520267296506249216", inline = True)
     embed.add_field(name="__**Bot prefix**__", value="!!", inline = True)
     embed.add_field(name="__**Bot language**__", value="Python", inline = True)

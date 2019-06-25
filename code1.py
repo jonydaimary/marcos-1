@@ -61,6 +61,22 @@ async def test(ctx):
 async def clear(ctx, number: int):
   purge = await ctx.purge_from(ctx.message.channel, limit = number+1)	
 
+
+@client.command(pass_context = True)
+async def avatar(ctx, user: discord.Member=None):
+    if user is None:
+        embed = discord.Embed(title='User: {}'.format(ctx.message.author.name), color=0Xf9fcfc)
+        embed.set_image(url = ctx.message.author.avatar_url)
+        embed.set_footer(text=f"Requested by {ctx.message.author.name}", icon_url=f'{ctx.message.author.avatar_url}')
+        embed.timestamp = datetime.datetime.utcnow()
+        await ctx.send(embed=embed)
+    else:
+        embed = discord.Embed(title='User: {}'.format(user.name), color=0Xf9fcfc)
+        embed.set_footer(text=f"Requested by {ctx.message.author.name}", icon_url=f"{ctx.message.author.avatar_url}")
+        embed.timestamp = datetime.datetime.utcnow()
+        embed.set_image(url = user.avatar_url)
+        await ctx.send(embed=embed)
+
 	
 @client.command(pass_context=True, aliases=["Help"])
 async def help(ctx):

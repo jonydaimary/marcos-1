@@ -116,6 +116,25 @@ async def slap(ctx, user: discord.Member = None):
         embed.set_image(url=random.choice(gifs))
         await ctx.send(embed=embed)	
 
+@client.command(pass_context = True)
+async def botinfo(ctx):
+    embed = discord.Embed(title="Dab information", color=0Xf9fcfc)
+    embed.add_field(name="__**Bot name**___", value="DAB", inline = True)
+    embed.add_field(name="__**Bot id**__", value="520267296506249216", inline = True)
+    embed.add_field(name="__**Bot prefix**__", value="!!", inline = True)
+    embed.add_field(name="__**Bot language**__", value="Python", inline = True)
+    embed.add_field(name="__**Creator**__", value="@marcos.#0290", inline = True)
+    embed.add_field(name="__**Special Thanks To**__", value="@I'm Joker#7475")
+    embed.add_field(name="__**Bot servers**__", value=str(len(client.servers)), inline = True)
+    embed.add_field(name="__**Bot users**__", value=str(len(set(client.get_all_members()))), inline = True)
+    embed.add_field(name="__**Invite bot**__", value="[click here](https://discordapp.com/api/oauth2/authorize?client_id=520267296506249216&permissions=8&scope=bot)", inline = True)
+    embed.add_field(name="__**Support server**__", value="[click here](https://discord.gg/dFM9HG6)", inline = True)
+    embed.add_field(name="If you have any queries about this BOT, DM me...", value="**@marcos.#0290**", inline = True)
+    embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/532088532576239647/537947512347295774/100.gif')
+    embed.set_footer(text=f'Requested by {ctx.message.author.name}', icon_url=f'{ctx.message.author.avatar_url}')
+    embed.timestamp = datetime.datetime.utcnow()
+    await ctx.send(embed=embed)	
+
 	
 @client.command(pass_context=True, aliases=["Help"])
 async def help(ctx):

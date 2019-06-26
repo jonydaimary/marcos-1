@@ -65,7 +65,7 @@ async def clear(ctx, number: int):
 @client.command(pass_context = True)
 async def avatar(ctx, user: discord.Member=None):
     if user is None:
-        embed = discord.Embed(title='User: {}'.format(ctx.message.author.name), color=0Xf9fcfc)
+        embed = discord.Embed(title='user- {}'.format(ctx.message.author.name), color=0Xf9fcfc)
         embed.set_image(url = ctx.message.author.avatar_url)
         embed.set_footer(text=f"Requested by {ctx.message.author.name}", icon_url=f'{ctx.message.author.avatar_url}')
         embed.timestamp = datetime.datetime.utcnow()

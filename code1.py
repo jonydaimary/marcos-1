@@ -184,6 +184,24 @@ async def bird(ctx):
         x = await ctx.send("Sorry, there was an error with the **bird** command")
         await asyncio.sleep(5)
         await ctx.delete_message(x)	
+
+	
+@client.command(pass_context=True, no_pm=True, aliases=["Dog"])
+async def dog(ctx):
+    try:
+        url = "http://shibe.online/api/shibes?count=1&urls=true&httpsUrls=false"
+        response = requests.get(url)
+        data = json.loads(response.text)
+        embed=discord.Embed(color=0Xf9fcfc)
+        embed.set_author(name =  "Here's Your Dog {}".format(ctx.message.author.name),)
+        embed.set_image(url = data[0])
+        embed.set_footer(text=f"Requested by {ctx.message.author.name}", icon_url=f"{ctx.message.author.avatar_url}")
+        embed.timestamp = datetime.datetime.utcnow()
+        await ctx.send(embed=embed)
+    except:
+        x = await ctx.send("Sorry, there was an error with the **dog** command")
+        await asyncio.sleep(5)
+        await ctx.delete_message(x)
 	
 	
 @client.command(pass_context=True, aliases=["Help"])

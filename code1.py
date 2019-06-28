@@ -202,6 +202,17 @@ async def dog(ctx):
         x = await ctx.send("Sorry, there was an error with the **dog** command")
         await asyncio.sleep(5)
         await ctx.delete_message(x)
+
+	
+@client.command(pass_context=True)
+@commands.has_permissions(administrator = True)
+async def spam(ctx, count: int, *, SecretCocoSpam: str):
+        await ctx.message.delete()
+        for i in range(count):
+            await asyncio.sleep(2.5)
+            await ctx.send(SecretCocoSpam)
+        else:
+            return; 
 	
 	
 @client.command(pass_context=True, aliases=["Help"])

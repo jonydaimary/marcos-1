@@ -209,7 +209,7 @@ async def dog(ctx):
 async def spam(ctx, count: int, *, SecretCocoSpam: str):
         await ctx.message.delete()
         for i in range(count):
-            await asyncio.sleep(2.5)
+            await asyncio.sleep(5.0)
             await ctx.send(SecretCocoSpam)
         else:
             return; 

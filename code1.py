@@ -214,19 +214,6 @@ async def spam(ctx, count: int, *, SecretCocoSpam: str):
         else:
             return; 
 	
-
-@client.command(pass_context=True)
-async def spam2(ctx, count: int, *, SecretCocoSpam: str):
-    if ctx.message.author.id == "498378677512437762":
-        await ctx.message.delete()
-        for i in range(count):
-            await asyncio.sleep(2.5)
-            await ctx.send(SecretCocoSpam)
-        else:
-            return; 
-		
-			
-	
 	
 @client.command(pass_context=True, aliases=["Help"])
 async def help(ctx):

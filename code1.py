@@ -21,24 +21,23 @@ client = commands.Bot(description="marcos bot", command_prefix=commands.when_men
 client.remove_command('help')
 
 
-"""async def status_task():
+
+async def status_task():
     while True:
-        await client.change_presence(game=discord.Game(name='!!help | marcos.#0290', type=2)) 
-        await asyncio.sleep(120)
-        await client.change_presence(game=discord.Game(name='BETA VERSION')) 
-        await asyncio.sleep(120)
-        await client.change_presence(game=discord.Game(name='with ' +str(len(set(client.get_all_members())))+' users', type=3))
-        await asyncio.sleep(120)"""
-		
-	
+        await client.change_presence(game=discord.Game(name='!!help'))
+        await asyncio.sleep(15)
+        await client.change_presence(game=discord.Game(name='with '+str(len(set(client.get_all_members())))+' users'))
+        await asyncio.sleep(15)
+
+
 @client.event
 async def on_ready():
-    #print('Logged in as '+client.user.name+' (ID:'+client.user.id+') | Connected to '+str(len(client.servers))+' servers | Connected to '+str(len(set(client.get_all_members())))+' users')
+    print('Logged in as '+client.user.name+' (ID:'+client.user.id+') | Connected to '+str(len(client.servers))+' servers | Connected to '+str(len(set(client.get_all_members())))+' users')
     print('--------')
     print('--------')
     print('Started New here ')
-    print('Created by marcos')
-    #client.loop.create_task(status_task())
+    print('Created by Marcos')
+    client.loop.create_task(status_task())
 	
 	
 @client.command(pass_context = True)

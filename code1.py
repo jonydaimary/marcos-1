@@ -183,7 +183,7 @@ async def bird(ctx):
     except:
         x = await ctx.send("Sorry, there was an error with the **bird** command")
         await asyncio.sleep(5)
-        await ctx.delete_message(x)	
+        await x.delete()
 
 	
 @client.command(pass_context=True, no_pm=True, aliases=["Dog"])
@@ -201,7 +201,7 @@ async def dog(ctx):
     except:
         x = await ctx.send("Sorry, there was an error with the **dog** command")
         await asyncio.sleep(5)
-        await ctx.delete_message(x)
+        await x.delete()
 
 
 @client.command(pass_context=True, no_pm=True, aliases=["Cat"])
@@ -219,7 +219,7 @@ async def cat(ctx):
     except:
         x = await ctx.send("Sorry, there was an error with the **cat** command")
         await asyncio.sleep(5)
-        await ctx.delete_message(x)
+        await x.delete()
 	
 
 @client.command(pass_context=True, no_pm=True, aliases=["Fox"])
@@ -237,7 +237,7 @@ async def fox(ctx):
     except:
         x = await ctx.send("Sorry, there was an error with the **fox** command")
         await asyncio.sleep(5)
-        await ctx.delete_message(x) 	
+        await x.delete()
 	
 	
 @client.command(pass_context=True)

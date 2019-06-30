@@ -215,7 +215,7 @@ async def cat(ctx):
         embed.set_image(url = data[0])
         embed.set_footer(text=f"Requested by {ctx.message.author.name}", icon_url=f"{ctx.message.author.avatar_url}")
         embed.timestamp = datetime.datetime.utcnow()
-        await client.say(embed=embed)
+        await client.send(embed=embed)
     except:
         x = await ctx.send("Sorry, there was an error with the **cat** command")
         await asyncio.sleep(5)

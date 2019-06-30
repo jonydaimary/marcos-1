@@ -22,7 +22,7 @@ client.remove_command('help')
 
 
 
-async def status_task():
+#async def status_task():
     while True:
         await client.change_presence(game=discord.Game(name='!!help'))
         await asyncio.sleep(15)
@@ -32,7 +32,7 @@ async def status_task():
 
 @client.event
 async def on_ready():
-    print('Logged in as '+client.user.name+' (ID:'+client.user.id+') | Connected to '+str(len(client.servers))+' servers | Connected to '+str(len(set(client.get_all_members())))+' users')
+    #print('Logged in as '+client.user.name+' (ID:'+client.user.id+') | Connected to '+str(len(client.servers))+' servers | Connected to '+str(len(set(client.get_all_members())))+' users')
     print('--------')
     print('--------')
     print('Started New here ')

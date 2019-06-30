@@ -249,7 +249,20 @@ async def spam(ctx, count: int, *, SecretCocoSpam: str):
             await ctx.send(SecretCocoSpam)
         else:
             return; 
-	
+
+
+@client.command(pass_context=True)
+async def joke(ctx):
+    res = requests.get(
+            'https://icanhazdadjoke.com/',
+             headers={"Accept":"application/json"}
+             )
+    if res.status_code == requests.codes.ok:
+        await ctx.send(str(res.json()['joke']))
+    else:
+        await ctx.send('oops!I ran out of jokes')
+
+
 	
 @client.command(pass_context=True, aliases=["Help"])
 async def help(ctx):

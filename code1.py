@@ -266,7 +266,7 @@ async def joke(ctx):
 @commands.cooldown(3, 5)
 async def danbooru(ctx, *, message:str=None):
     if ctx.message.channel.is_nsfw == False:
-        embed=discord.Embed(description = "This is not a **nsfw** channel", color = color_blue)
+        embed=discord.Embed(description = "This is not a **nsfw** channel", color=0Xf9fcfc)
         x = await ctx.send(embed=embed)
         await asyncio.sleep(5)
         return await x.delete()
@@ -281,7 +281,7 @@ async def danbooru(ctx, *, message:str=None):
     data = json.loads(response.text)
     limit = len(data)
     if not data:
-        embed=discord.Embed(description = "Couldn't find a picture with that tag", color = color_blue)
+        embed=discord.Embed(description = "Couldn't find a picture with that tag", color=0Xf9fcfc)
         x = await ctx.send(embed=embed)
         await asyncio.sleep(5)
         return await x.delete()
@@ -290,7 +290,7 @@ async def danbooru(ctx, *, message:str=None):
         final_url = x["file_url"]
     else:
         final_url = "http://danbooru.donmai.us{}".format(x["file_url"])
-        embed=discord.Embed(title = "Enjoy {}, ".format(ctx.message.author.name), color = color_blue)
+        embed=discord.Embed(title = "Enjoy {}, ".format(ctx.message.author.name), color=0Xf9fcfc)
         embed.set_image(url = final_url)
         embed.set_footer(text = "From danbooru, Tag: {}, Results found: {}".format(message, limit))
         await ctx.send(embed=embed)	

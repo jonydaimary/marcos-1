@@ -37,7 +37,7 @@ async def on_ready():
     print('--------')
     print('Started New here ')
     print('Created by Marcos')
-    client.loop.create_task(status_task())
+    #client.loop.create_task(status_task())
 	
 	
 @client.command(pass_context = True)

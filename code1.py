@@ -262,6 +262,40 @@ async def joke(ctx):
         await ctx.send('oops!I ran out of jokes')
 
 
+@client.command(pass_context=True, no_pm=True, aliases=["dan"])
+@commands.cooldown(3, 5)
+async def danbooru(ctx, *, message:str=None):
+    if ctx.message.channel.is_nsfw == False:
+        embed=discord.Embed(description = "This is not a **nsfw** channel", color = color_blue)
+        x = await ctx.send(embed=embed)
+        await asyncio.sleep(5)
+        return await x.delete()
+    limit = 100
+    if message==None:
+        listu = ["breasts", "blush", "skirt", "thighhighs", "large breasts", "underwear", "panties"\
+                "nipples", "ass", "pantyhose", "nude", "pussy"]
+        message = listu[random.randint(0, len(listu)-1)]
+    message = message.replace(" ", "_")
+    url = "https://danbooru.donmai.us/post/index.json?limit={}&tags={}".format(limit, message)
+    response = requests.get(url)
+    data = json.loads(response.text)
+    limit = len(data)
+    if not data:
+        embed=discord.Embed(description = "Couldn't find a picture with that tag", color = color_blue)
+        x = await ctx.send(embed=embed)
+        await asyncio.sleep(5)
+        return await x.delete()
+    x = data[random.randint(0, limit-1)]
+    if x["file_url"].startswith("http"):
+        final_url = x["file_url"]
+    else:
+        final_url = "http://danbooru.donmai.us{}".format(x["file_url"])
+        embed=discord.Embed(title = "Enjoy {}, ".format(ctx.message.author.name), color = color_blue)
+        embed.set_image(url = final_url)
+        embed.set_footer(text = "From danbooru, Tag: {}, Results found: {}".format(message, limit))
+        await ctx.send(embed=embed)	
+	
+	
 	
 @client.command(pass_context=True, aliases=["Help"])
 async def help(ctx):

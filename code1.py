@@ -56,6 +56,21 @@ async def clear(ctx, number: int):
 
 
 @client.command(pass_context = True)
+async def announce(ctx, channel: discord.Channel=None, *, msg: str=None):
+    member = ctx.message.author
+    if channel is None or msg is None:
+        await ctx.send('```Proper usage is \n\n!!announce #channel matter```')
+        return
+    else:
+        if member.server_permissions.administrator == False:
+            await ctx.send('**You Do Not Have Permission To Use This Command**')
+            return
+        else:
+            await ctx.send_message(channel, msg)
+            await ctx.delete_message(ctx.message)
+		
+
+@client.command(pass_context = True)
 async def avatar(ctx, user: discord.Member=None):
     if user is None:
         embed = discord.Embed(title='user- {}'.format(ctx.message.author.name), color=0Xf9fcfc)

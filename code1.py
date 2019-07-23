@@ -171,7 +171,7 @@ async def movie(ctx, *, name:str=None):
     url = "http://www.omdbapi.com/?t={}&apikey={}".format(name, key)
     response = requests.get(url)
     x = json.loads(response.text)
-    embed=discord.Embed(title = "**{}**".format(name).upper(), description = "Here is your movie {}".format(ctx.message.author.name), color = 0XFF69B4)
+    embed=discord.Embed(title = "**{}**".format(name).upper(), description = "Here is your movie {}".format(ctx.message.author.name), color = 0Xf9fcfc)
     if x["Poster"] != "N/A":
      embed.set_thumbnail(url = x["Poster"])
     embed.add_field(name = "__Title__", value = x["Title"])

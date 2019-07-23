@@ -165,7 +165,7 @@ async def botinfo(ctx):
 async def movie(ctx, *, name:str=None):
     await ctx.trigger_typing()
     if name is None:
-        embed=discord.Embed(description = "Please specify a movie, *eg. %movie Bohemian Rhapsody*", color = 0XFF69B4)
+        embed=discord.Embed(description = "Please specify a movie, *eg. %movie Bohemian Rhapsody*", color = 0Xf9fcfc)
         await ctx.send(embed=embed)
     key = "4210fd67"
     url = "http://www.omdbapi.com/?t={}&apikey={}".format(name, key)

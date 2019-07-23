@@ -44,21 +44,10 @@ async def meme(ctx):
             embed.timestamp = datetime.datetime.utcnow()
             await ctx.send(embed=embed)
 	
-@client.command(pass_context=True)
-async def test(ctx):
-	await ctx.send("Hello")
+#@client.command(pass_context=True)
+#async def test(ctx):
+	#await ctx.send("Hello")
 	
-@client.command(pass_context = True)
-async def ping(ctx):
-    if ctx.message.author.bot:
-      return
-    else:
-      channel = ctx.message.channel
-      t1 = time.perf_counter()
-      await ctx.send_typing(channel)
-      t2 = time.perf_counter()
-      await ctx.send("Ping: {}ms".format(round((t2-t1)*1000)))
-
 	
 @client.command(pass_context = True)
 @commands.has_permissions(manage_messages = True)
@@ -296,15 +285,14 @@ async def joke(ctx):
 
 
 
-	
-	
+		
 @client.command(pass_context=True, aliases=["Help"])
 async def help(ctx):
     embed = discord.Embed(color=0Xf9fcfc)
     embed.set_author(name="Command prefix: !!")
     embed.add_field(name="__Administrator commands__", value="`serverinfo  :` server's information . \n`membercount  :` how many servers mamber in. \n`poll  :` Polling . \n`ban  :` ban the user. \n`clear  :` clear messages. \n`announce  :` To announce the entered **#channel** n **matter** . ", inline=True)
     embed.add_field(name="__Animals commands__", value="`fox  :` fox images. \n`dog  :` dog images. \n`cat  :` cat images. \n`bird  :` bird images. ")
-    embed.add_field(name="__Information commands__", value="`botinfo  :` Information about this BOT. \n`userinfo  :` user's information. \n`ping  :` pong.")
+    embed.add_field(name="__Information commands__", value="`botinfo  :` Information about this BOT. \n`userinfo  :` user's information. \n`ping  :` pong. \n`movie  :` movie name. ")
     embed.add_field(name="__Images commands__", value="`meme  :` meme image. \n`avatar  :` Avatar. \n`dc  :` DC GIF \n`marvel  :` Marvel GIF. \n`joker  :` Joker GIF. \n`slap  :` slap the user. \n`hug  :`  hug a user. \n`kiss  :` kiss the user. \n`lovedetect  :` lovedetect. \n\n__**more feautures coming soon...**__")
     embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/592605488265428992/593310963034226693/mimikyu-2-622x350.png') 
     embed.set_footer(text=f"Requested by {ctx.message.author.name}", icon_url=f"{ctx.message.author.avatar_url}")

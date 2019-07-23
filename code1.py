@@ -49,6 +49,18 @@ async def test(ctx):
 	await ctx.send("Hello")
 	
 @client.command(pass_context = True)
+async def ping(ctx):
+    if ctx.message.author.bot:
+      return
+    else:
+      channel = ctx.message.channel
+      t1 = time.perf_counter()
+      await ctx.send_typing(channel)
+      t2 = time.perf_counter()
+      await ctx.send("Ping: {}ms".format(round((t2-t1)*1000)))
+
+	
+@client.command(pass_context = True)
 @commands.has_permissions(manage_messages = True)
 async def clear(ctx, number: int):
   await ctx.message.channel.purge(limit=number+1)

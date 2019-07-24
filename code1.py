@@ -77,6 +77,26 @@ async def announce(ctx, channel: discord.TextChannel=None, *, msg: str):
         await ctx.send(" ```Proper usage is\n\nannounce **#channel** <matter>```")
     else:
         await channel.send(msg)	
+
+	
+@client.command(pass_context = True)
+async def userinfo(ctx, user: discord.Member=None):
+    if user is None:
+      await ctx.send('```The proper usage is \n!!userinfo <@user>```')
+      return
+    else:
+      embed = discord.Embed(title="{}'s info".format(user.name), description="Here's what I could find.", color=0Xf9fcfc)
+      embed.add_field(name="Name", value=user.name, inline=True)
+      embed.add_field(name="ID", value=user.id, inline=True)
+      embed.add_field(name="Status", value=user.status, inline=True)
+      embed.add_field(name="Highest role", value=user.top_role)
+      embed.add_field(name="Joined", value=user.joined_at)
+      embed.set_thumbnail(url=user.avatar_url)
+      embed.set_footer(text=f"Requested by {ctx.message.author.name}", icon_url=f"{ctx.message.author.avatar_url}")
+      embed.timestamp = datetime.datetime.utcnow()
+      embed.set_image(url = user.avatar_url)
+      await cxt.send(embed=embed)
+	
 	
 
 @client.command(pass_context = True)

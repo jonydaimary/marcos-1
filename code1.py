@@ -383,18 +383,32 @@ async def spam(ctx, count: int, *, SecretCocoSpam: str):
             return; 
 
 
-@client.command(pass_context=True)
+#@client.command(pass_context=True)
+#async def joke(ctx):
+#    res = requests.get(
+#            'https://icanhazdadjoke.com/',
+#             headers={"Accept":"application/json"}
+#             )
+#    if res.status_code == requests.codes.ok:
+#        await ctx.send(str(res.json()['joke']))
+#    else:
+#        await ctx.send('oops!I ran out of jokes')
+
+@client.command(pass_context=True,)
 async def joke(ctx):
-    res = requests.get(
-            'https://icanhazdadjoke.com/',
-             headers={"Accept":"application/json"}
-             )
+    x = await ctx.send("CRY N____ is thinking of a joke.")
+    await asyncio.sleep(1)
+    await x.edit(content="CRY N____ is thinking of a joke..")
+    await asyncio.sleep(1)
+    await x.edit(content="CRY N____ is thinking of a joke...")
+    await asyncio.sleep(1)
+    await x.edit(content="CRY N____ is thinking of a joke....")
+    await asyncio.sleep(1)
+    res = requests.get('https://icanhazdadjoke.com/', headers={"Accept":"application/json"})
     if res.status_code == requests.codes.ok:
-        await ctx.send(str(res.json()['joke']))
+        await x.edit(content=str(res.json()['joke']))
     else:
-        await ctx.send('oops!I ran out of jokes')
-
-
+        await x.edit(context="oops!I ran out of jokes...")    
 
 		
 @client.command(pass_context=True, aliases=["Help"])

@@ -331,6 +331,46 @@ async def fox(ctx):
         await asyncio.sleep(5)
         await x.delete()
 	
+
+@client.command(pass_context=True)
+async def animeshow(ctx, *, name:str = None):
+    api_address = f"https://kitsu.io/api/edge/anime?filter[text]={name}"
+    data = requests.get(api_address).json()
+    url = data['data'][0]['links']['self']
+    data2 = requests.get(url).json()
+    end_date = data2['data']['attributes']['endDate']
+    synopsis = data2['data']['attributes']['synopsis']
+    if len(synopsis) > 1024:
+        synopsis = "Oh no! The length of synopsis is very large, I can't print it here"
+    else:
+        synopsis = synopsis
+    if end_date == None:
+        end_date = "Not finished yet"
+    else:
+        end_date = end_date
+    ytlink = data2['data']['attributes']['youtubeVideoId']
+    await ctx.trigger_typing()
+    embed = discord.Embed(title="Here's the anime show that you've searched for...", color=0XFF69BF)
+    embed.add_field(name="Name", value=f"{data2['data']['attributes']['titles']['en'] } ({data2['data']['attributes']['titles']['ja_jp']})")
+    embed.add_field(name="Synopsis", value=synopsis)
+    embed.add_field(name="Average Rating", value=data2['data']['attributes']['averageRating'])
+    embed.add_field(name="Start Date", value=data2['data']['attributes']['startDate'])
+    embed.add_field(name="End Date", value=end_date)
+    embed.add_field(name="Age Rating", value=data2['data']['attributes']['ageRating'])
+    embed.add_field(name="Age Rating Guide", value=data2['data']['attributes']['ageRatingGuide'])
+    embed.add_field(name="Type of Media", value=data2['data']['attributes']['subtype'])
+    embed.add_field(name="Status", value=data2['data']['attributes']['status'])
+    embed.set_thumbnail(url=data2['data']['attributes']['posterImage']['original'])
+    embed.add_field(name="Episode Count", value=data2['data']['attributes']['episodeCount'])
+    embed.add_field(name="Episode Length", value=data2['data']['attributes']['episodeLength'])
+    embed.add_field(name="Youtube link", value=f"[Click here for trailer](https://www.youtube.com/watch?v={ytlink})")
+    embed.add_field(name="NSFW", value=data2['data']['attributes']['nsfw'])
+    embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+    embed.timestamp = datetime.datetime.utcnow()
+    embed.set_footer(text=f"Requested By | {ctx.author.name}")
+    await ctx.send(embed=embed)	
+	
+	
 	
 @client.command(pass_context=True)
 @commands.has_permissions(administrator = True)

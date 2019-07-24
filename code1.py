@@ -68,7 +68,16 @@ async def clear(ctx, number: int):
         #else:
             #await ctx.send_message(channel, msg)
             #await ctx.delete_message(ctx.message)
-		
+
+	
+@client.command(pass_context = True)
+@commands.has_permissions(administrator=True) 
+async def announce(ctx, channel: discord.TextChannel=None, *, msg: str):
+    if channel is None:
+        await ctx.send(" ```Proper usage is\n\nannounce **#channel** <matter>```")
+    else:
+        await channel.send(msg)	
+	
 
 @client.command(pass_context = True)
 async def avatar(ctx, user: discord.Member=None):

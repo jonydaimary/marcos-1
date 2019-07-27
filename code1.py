@@ -225,6 +225,7 @@ async def movie(ctx, *, name:str=None):
     embed.add_field(name = "__Actors__", value = x["Actors"])
     embed.add_field(name = "__Plot__", value = x["Plot"])
     embed.add_field(name = "__Language__", value = x["Language"])
+    embed.add_field(name = "__Box Office__", value = x['BoxOffice'])
     embed.add_field(name = "__Imdb Rating__", value = x["imdbRating"]+"/10")
     embed.add_field(name = "__Type__", value = x["Type"])
     embed.set_footer(text = "Information from the OMDB API")

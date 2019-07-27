@@ -95,7 +95,7 @@ async def userinfo(ctx, user: discord.Member=None):
       embed.set_footer(text=f"Requested by {ctx.message.author.name}", icon_url=f"{ctx.message.author.avatar_url}")
       embed.timestamp = datetime.datetime.utcnow()
       embed.set_image(url = user.avatar_url)
-      await cxt.send(embed=embed)
+      await ctx.send(embed=embed)
 	
 	
 

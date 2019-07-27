@@ -93,7 +93,6 @@ async def userinfo(ctx, user: discord.Member=None):
       embed.add_field(name="Joined", value=user.joined_at)
       embed.set_thumbnail(url=user.avatar_url)
       embed.set_footer(text=f"Requested by {ctx.message.author.name}", icon_url=f"{ctx.message.author.avatar_url}")
-      embed.timestamp = datetime.datetime.utcnow()
       embed.set_image(url = user.avatar_url)
       await ctx.send(embed=embed)
 	

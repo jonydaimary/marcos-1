@@ -408,6 +408,29 @@ async def joke(ctx):
         await x.edit(content=str(res.json()['joke']))
     else:
         await x.edit(context="oops!I ran out of jokes...")    
+		    
+		    
+@client.command(pass_context=True)
+async def lyrics(ctx, *, track:str = None):
+    address = f"https://some-random-api.ml/lyrics?title={track}"
+    data = requests.get(address).json()
+    if 'error' in data:
+        await ctx.send(f"**{data['error']}**")
+    else:
+        lyrics = data['lyrics']
+        if len(lyrics) < 2048:
+            for chunk in [lyrics[i:i+2000] for i in range(0, len(lyrics), 2000)]:
+                embed = discord.Embed(title=data['author'], description=f"{chunk} \n [Source website]({data['links']['genius']})", color=0XFF69BF)
+                embed.set_author(name=data['title'], url=data['thumbnail']['genius'])
+                embed.set_thumbnail(url=data['thumbnail']['genius'])
+                embed.timestamp = datetime.datetime.utcnow()
+                await ctx.send(f"**{ctx.author.name},** The lyrics of **{data['author']} - {data['title']}** is sent to your DM please check your DM's...")
+                await ctx.author.send(embed=embed)
+        
+        else:
+            await ctx.send(f"**{ctx.author.name},** The lyrics of **{data['author']} - {data['title']}** is sent to your DM please check your DM's...")
+            for chunk in [lyrics[i:i+2000] for i in range(0, len(lyrics), 2000)]:
+                await ctx.author.send(chunk)           
 
 		
 @client.command(pass_context=True, aliases=["Help"])

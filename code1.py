@@ -95,6 +95,22 @@ async def userinfo(ctx, user: discord.Member=None):
       embed.set_footer(text=f"Requested by {ctx.message.author.name}", icon_url=f"{ctx.message.author.avatar_url}")
       await ctx.send(embed=embed)
 	
+
+@client.command(pass_context=True)
+@commands.has_permissions(manage_roles = True)
+async def roleinfo(ctx, role: discord.Role=None):
+    embed = discord.Embed(title=f"Here's the info of {role} role...", description=" ", color=role.color)
+    embed.set_author(name=f"{ctx.guild.name}", icon_url=ctx.guild.icon_url)
+    embed.add_field(name="ID", value=role.id, inline=False)
+    embed.add_field(name="Name", value=role.name, inline=False)
+    embed.add_field(name="Permissions", value=role.permissions, inline=False)
+    embed.add_field(name="Guild/Server", value=ctx.guild.name, inline=False)
+    embed.add_field(name="The role is shown seperately from others", value=role.hoist, inline=False)
+    embed.add_field(name="Position of the role", value=role.position, inline=False)
+    embed.add_field(name="Time of creation", value=role.created_at.strftime("%d-%m-%Y %H:%M:%S"), inline=False)
+    embed.timestamp = datetime.datetime.utcnow()
+    embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
+    await ctx.send(embed=embed)
 	
 
 @client.command(pass_context = True)

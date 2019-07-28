@@ -273,7 +273,50 @@ async def lovedetect(ctx, user: discord.Member = None, *, user2: discord.Member 
             embed.set_footer(text=f"Requested by {ctx.message.author.name}", icon_url=f"{ctx.message.author.avatar_url}")
             embed.timestamp = datetime.datetime.utcnow()
             await ctx.send(embed=embed)	
-	
+
+		
+@client.command(pass_context=True)
+async def virus(ctx,user: discord.Member=None,*,hack=None):
+    nome = ctx.message.author
+    if not hack:
+        hack = 'discord'
+    else:
+        hack = hack.replace(' ','_')
+    channel = ctx.message.channel
+    x = await ctx.send_message(channel, '``[▓▓▓                    ] / {}-virus.exe Packing files.``'.format(hack))
+    await asyncio.sleep(1.5)
+    x = await ctx.edit_message(x,'``[▓▓▓▓▓▓▓                ] - {}-virus.exe Packing files..``'.format(hack))
+    await asyncio.sleep(0.3)
+    x = await ctx.edit_message(x,'``[▓▓▓▓▓▓▓▓▓▓▓▓           ] \ {}-virus.exe Packing files...``'.format(hack))
+    await asyncio.sleep(1.2)
+    x = await ctx.edit_message(x,'``[▓▓▓▓▓▓▓▓▓▓▓▓▓▓         ] | {}-virus.exe Initializing code.``'.format(hack))
+    await asyncio.sleep(1)
+    x = await ctx.edit_message(x,'``[▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓      ] / {}-virus.exe Initializing code..``'.format(hack))
+    await asyncio.sleep(1.5)
+    x = await ctx.edit_message(x,'``[▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ] - {}-virus.exe Finishing.``'.format(hack))
+    await asyncio.sleep(1)
+    x = await ctx.edit_message(x,'``[▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ] \ {}-virus.exe Finishing..``'.format(hack))
+    await asyncio.sleep(1)
+    x = await ctx.edit_message(x,'``Successfully downloaded {}-virus.exe``'.format(hack))
+    await asyncio.sleep(2)
+    x = await ctx.edit_message(x,'``Injecting virus.   |``')
+    await asyncio.sleep(0.5)
+    x = await ctx.edit_message(x,'``Injecting virus..  /``')
+    await asyncio.sleep(0.5)
+    x = await ctx.edit_message(x,'``Injecting virus... -``')
+    await asyncio.sleep(0.5)
+    x = await ctx.edit_message(x,'``Injecting virus....\``')
+    await ctx.delete_message(x)
+    await ctx.delete_message(ctx.message)
+        
+    if user:
+        await ctx.send('`{}-virus.exe` successfully injected into **{}**\'s system.'.format(hack,user.name))
+        await ctx.send_message(user,'**Alert!**\n``You may have been hacked. {}-virus.exe has been found in your system\'s operating system.\nYour data may have been compromised. Please re-install your OS immediately.``'.format(hack))
+    else:
+        await ctx.send('**{}** has hacked himself ¯\_(ツ)_/¯.'.format(name.name))
+        await ctx.send_message(name,'**Alert!**\n``You may have been hacked. {}-virus.exe has been found in your system\'s operating system.\nYour data may have been compromised. Please re-install your OS immediately.``'.format(hack))
+			
+		
 	
 @client.command(pass_context=True, no_pm=True, aliases=["Bird"])
 async def bird(ctx):

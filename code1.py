@@ -85,7 +85,7 @@ async def clear(ctx, number: int):
 @client.command(pass_context = True)
 @commands.has_permissions(administrator=True) 
 async def announce(ctx, channel: discord.TextChannel=None, *, msg: str):
-    if channel is None:
+    if TextChannel is None:
         await ctx.send(" ```Proper usage is\n\nannounce **#channel** <matter>```")
     else:
         await channel.send(msg)	

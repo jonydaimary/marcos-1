@@ -24,6 +24,10 @@ client.remove_command('help')
 #    while True:
 #        await client.change_presence(game=discord.Game(name='!!help',)) 
 
+async def status_task():
+    while True:
+        await client.change_presence(status=discord.Status.online)
+
 
 @client.event
 async def on_ready():

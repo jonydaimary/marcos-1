@@ -32,9 +32,9 @@ async def on_ready():
     print('--------')
     print('Started new here ')
     print('Created by MARCOS々DMRY')
-    #client.loop.create_task(status_task())
-    return await client.change_presence(discord.Game(name='help')) 
+    #client.loop.create_task(status_task()) 
 
+	
 @client.event
 async def on_member_join(member):
     channel = client.get_channel(593696190730862592)

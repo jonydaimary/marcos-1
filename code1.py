@@ -67,26 +67,26 @@ async def clear(ctx, number: int):
   await ctx.message.channel.purge(limit=number+1)
 
 
-#@client.command(pass_context = True)
-#async def announce(ctx, channel: discord.Channel=None, *, msg: str=None):
-    #member = ctx.message.author
-    #if channel is None or msg is None:
-        #await ctx.send('```Proper usage is \n\n!!announce #channel matter```')
-        #return
-    #else:
-        #if member.server_permissions.administrator == False:
-            #await ctx.send('**You Do Not Have Permission To Use This Command**')
-            #return
-        #else:
-            #await ctx.send_message(channel, msg)
-            #await ctx.delete_message(ctx.message)
+@client.command(pass_context = True)
+async def announce1(ctx, channel: discord.TextChannel=None, *, msg: str=None):
+    member = ctx.message.author
+    if channel is None or msg is None:
+        await ctx.send('```Proper usage is \n\n!!announce #channel matter```')
+        return
+    else:
+        if member.guild_permissions.administrator == False:
+            await ctx.send('**You Do Not Have Permission To Use This Command**')
+            return
+        else:
+            await ctx.send_message(channel, msg)
+            await ctx.delete_message(ctx.message)
 
 	
 @client.command(pass_context = True)
 @commands.has_permissions(administrator=True) 
 async def announce(ctx, channel: discord.TextChannel=None, *, msg: str=None):
     if channel is None or msg is None:
-        await ctx.send(" ```Proper usage is\n\nannounce **#channel** <matter>```")
+        await ctx.send(" ```Proper usage is\n\nannounce #channel <matter>```")
     else:
         await channel.send(msg)	
 

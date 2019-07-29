@@ -37,12 +37,12 @@ async def on_ready():
 async def on_member_join(member):
     channel = client.get_channel(593696190730862592)
     person_count = len([member for member in member.guild.members if not member.bot])
-    embed = discord.Embed(title=f'Welcome {member.name} to {member.server.name}', description='**__Thanks for Joining__**', color=0Xf9fcfc)
+    embed = discord.Embed(title=f'Welcome {member.name} to {member.guild.name}', description='**__Thanks for Joining__**', color=0Xf9fcfc)
     embed.set_thumbnail(url=member.avatar_url) 
     embed.set_image(url=member.avatar_url)
-    embed.add_field(name='__Join position__', value='{}'.format(str(member.server.member_count)), inline=True)
+    embed.add_field(name='__Join position__', value='{}'.format(str(member.guild.member_count)), inline=True)
     embed.add_field(name='Time of joining', value=member.joined_at)
-    await ctx.send(channel, embed=embed)	    
+    await ctx.send(channel, embed=embed)    
 
 	
 @client.command(pass_context = True)

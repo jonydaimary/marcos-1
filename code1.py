@@ -16,7 +16,7 @@ import aiohttp
 
 
 Forbidden= discord.Embed(title="Permission Denied", description="1) Please check whether you have permission to perform this action or not. \n2) Please check whether my role has permission to perform this action in this channel or not. \n3) Please check my role position.", color=0xf9fcfc)
-client = commands.Bot(description="marcos bot", command_prefix=commands.when_mentioned_or("!!"), pm_help = True)
+client = commands.Bot(description="cry n___ bot", command_prefix=commands.when_mentioned_or("!!"), pm_help = True)
 
 client.remove_command('help')
 
@@ -37,7 +37,7 @@ async def on_ready():
 async def on_member_join(member):
     channel = client.get_channel(593696190730862592)
     person_count = len([member for member in member.guild.members if not member.bot])
-    embed = discord.Embed(title=f'Welcome {member.name} to {member.guild.name}', description='**__Thanks for Joining__**', color=0Xf9fcfc)
+    embed = discord.Embed(title=f'Welcome {member.name} to {member.guild.name}', description='**__Thanks for Joining__**', color=0X333233)
     embed.set_thumbnail(url=member.avatar_url) 
     embed.set_image(url=member.avatar_url)
     embed.add_field(name='__Join position__', value='{}'.format(str(member.guild.member_count)), inline=True)

@@ -33,7 +33,7 @@ async def on_ready():
     print('Started new here ')
     print('Created by MARCOS々DMRY')
     #client.loop.create_task(status_task())
-    return await client.change_presence(game=discord.Game(name='help')) 
+    return await client.change_presence(name=discord.Game(name='help')) 
 
 @client.event
 async def on_member_join(member):

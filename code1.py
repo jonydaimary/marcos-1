@@ -68,7 +68,7 @@ async def clear(ctx, number: int):
 
 
 @client.command(pass_context = True)
-async def announce1(ctx, channel: discord.TextChannel=None, *, msg: str=None):
+async def announce(ctx, channel: discord.TextChannel=None, *, msg: str=None):
     member = ctx.message.author
     if channel is None or msg is None:
         await ctx.send('```Proper usage is \n\n!!announce #channel matter```')
@@ -81,13 +81,13 @@ async def announce1(ctx, channel: discord.TextChannel=None, *, msg: str=None):
             await channel.send(msg)
 
 	
-@client.command(pass_context = True)
-@commands.has_permissions(administrator=True) 
-async def announce(ctx, channel: discord.TextChannel=None, *, msg: str=None):
-    if channel is None or msg is None:
-        await ctx.send(" ```Proper usage is\n\nannounce #channel <matter>```")
-    else:
-        await channel.send(msg)	
+#@client.command(pass_context = True)
+#@commands.has_permissions(administrator=True) 
+#async def announce(ctx, channel: discord.TextChannel=None, *, msg: str=None):
+#    if channel is None or msg is None:
+#        await ctx.send(" ```Proper usage is\n\nannounce #channel <matter>```")
+#    else:
+#        await channel.send(msg)	
 
 	
 @client.command(pass_context = True)

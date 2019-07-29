@@ -78,8 +78,7 @@ async def announce1(ctx, channel: discord.TextChannel=None, *, msg: str=None):
             await ctx.send('**You Do Not Have Permission To Use This Command**')
             return
         else:
-            await ctx.send(msg)
-            await ctx.delete_message(ctx.msg)
+            await channel.send(msg)
 
 	
 @client.command(pass_context = True)

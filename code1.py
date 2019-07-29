@@ -20,9 +20,9 @@ client = commands.Bot(description="cry n___ bot", command_prefix=commands.when_m
 
 client.remove_command('help')
 
-async def status_task():
-    while True:
-        await client.change_presence(game=discord.Game(name='!!help',)) 
+#async def status_task():
+#    while True:
+#        await client.change_presence(game=discord.Game(name='!!help',)) 
 
 
 @client.event
@@ -33,7 +33,7 @@ async def on_ready():
     print('Started new here ')
     print('Created by MARCOS々DMRY')
     #client.loop.create_task(status_task())
-
+    return await client.change_presence(music=discord.Game(game='help')) 
 
 @client.event
 async def on_member_join(member):

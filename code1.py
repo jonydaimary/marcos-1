@@ -100,7 +100,6 @@ async def userinfo(ctx, user: discord.Member=None):
       embed.add_field(name="Name", value=user.name, inline=True)
       embed.add_field(name="ID", value=user.id, inline=True)
       embed.add_field(name="Status", value=user.status, inline=True)
-      embed.add_field(name='Time of joining', value=user.joined_at)
       embed.add_field(name="Highest role", value=user.top_role)
       embed.add_field(name="Joined", value=user.joined_at)
 #      embed.add_field(name='Create', value=user.create_at)

@@ -42,7 +42,7 @@ async def on_member_join(member):
     embed.set_image(url=member.avatar_url)
     embed.add_field(name='__Join position__', value='{}'.format(str(member.guild.member_count)), inline=True)
     embed.add_field(name='Time of joining', value=member.joined_at)
-    await ctx.send(channel, embed=embed)    
+    await channel.send(channel, embed=embed)    
 
 	
 @client.command(pass_context = True)

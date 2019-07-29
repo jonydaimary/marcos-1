@@ -24,6 +24,7 @@ client.remove_command('help')
 async def status_task():
     while True:
         await client.change_presence(status=discord.Status.idle)
+	await client.change_presence(game=discord.Game.gogo) 
 
 
 @client.event

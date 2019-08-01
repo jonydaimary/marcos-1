@@ -135,15 +135,15 @@ async def avatar(ctx, user: discord.Member=None):
         embed.set_image(url = user.avatar_url)
         await ctx.send(embed=embed)
 
-
+	
 @client.command(pass_context=True)
 @commands.has_permissions(administrator=True)
 async def poll(ctx, question, *options: str):
         if len(options) <= 1:
-            await ctx.say('You need more than one option to make a poll!')
+            await ctx.send('You need more than one option to make a poll!')
             return
         if len(options) > 10:
-            await ctx.say('You cannot make a poll for more than 10 things!')
+            await ctx.send('You cannot make a poll for more than 10 things!')
             return
 
         if len(options) == 2 and options[0] == 'yes' and options[1] == 'no':
@@ -155,7 +155,7 @@ async def poll(ctx, question, *options: str):
         for x, option in enumerate(options):
             description += '\n {} {}'.format(reactions[x], option)
             embed = discord.Embed(title=question, description=''.join(description), color=0Xf9fcfc)
-            react_message = await client.say(embed=embed)
+            react_message = await client.send(embed=embed)
         for reaction in reactions[:len(options)]:
             await client.add_reaction(react_message, reaction)
             embed.set_footer(text=f"Poll ID: {react_message.id}",)

@@ -24,9 +24,6 @@ client.remove_command('help')
 async def status_task():
     while True:
         await client.change_presence(status=discord.Status.idle, activity=discord.Game(">help"))
-	await asyncio.sleep(5)
-        await client.change_presence(status=discord.Status.idle, activity=discord.Game(">kill"))
-	await asyncio.sleep(5)
 
 
 @client.event

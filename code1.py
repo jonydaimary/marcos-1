@@ -145,7 +145,6 @@ async def poll(ctx, question, *options: str):
         if len(options) > 10:
             await ctx.send('You cannot make a poll for more than 10 things!')
             return
-
         if len(options) == 2 and options[0] == 'yes' and options[1] == 'no':
             reactions = ['👍', '👎']
         else:
@@ -157,8 +156,8 @@ async def poll(ctx, question, *options: str):
             embed = discord.Embed(title=question, description=''.join(description), color=0Xf9fcfc)
             react_message = await ctx.send(embed=embed)
         for reaction in reactions[:len(options)]:
-            await ctx.add_reaction(react_message, reaction)
-            embed.set_footer(text=f"Poll ID: {react_message.id}",)
+            await react_message.add_reaction(reaction)           
+	    embed.set_footer(text=f"Poll ID: {react_message.id}",)
             await ctx.edit_message(react_message, embed=embed)
 
 

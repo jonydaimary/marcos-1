@@ -34,7 +34,6 @@ async def on_ready():
     print('Started new here ')
     print('Created by MARCOS々DMRY')
     client.loop.create_task(status_task()) 
-#    return await client.change_presence(game=discord.Game('pika pika')) 
 
 	
 @client.event

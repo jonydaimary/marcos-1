@@ -45,7 +45,7 @@ async def on_member_join(member):
     embed.set_thumbnail(url=member.avatar_url) 
     embed.set_image(url=member.avatar_url)
     embed.add_field(name='__Join position__', value='{}'.format(str(member.guild.member_count)), inline=True)
-    embed.add_field(name='Time of joining', value=member.joined_at)
+    embed.add_field(name='Time of joining', value=member.joined_at.date(), inline=True)
     await channel.send(channel, embed=embed)    
 
 	
@@ -106,7 +106,7 @@ async def userinfo(ctx, user: discord.Member=None):
       embed.add_field(name="Status", value=user.status, inline=True)
       embed.add_field(name="Highest role", value=user.top_role)
       embed.add_field(name="Joined", value=user.joined_at)
-#      embed.add_field(name='Create', value=user.create_at)
+      embed.add_field(name='Account created at', value=gettime.date(), inline=True)
       embed.set_thumbnail(url=user.avatar_url)
       embed.set_footer(text=f"Requested by {ctx.message.author.name}", icon_url=f"{ctx.message.author.avatar_url}")
       await ctx.send(embed=embed)

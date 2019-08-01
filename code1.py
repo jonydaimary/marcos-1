@@ -106,7 +106,7 @@ async def userinfo(ctx, user: discord.Member=None):
       embed.add_field(name="Status", value=user.status, inline=True)
       embed.add_field(name="Highest role", value=user.top_role)
       embed.add_field(name="Joined", value=user.joined_at)
-      embed.add_field(name='Account created at', value=gettime.date(), inline=True)
+  #    embed.add_field(name='Account created at', value=gettime.date(), inline=True)
       embed.set_thumbnail(url=user.avatar_url)
       embed.set_footer(text=f"Requested by {ctx.message.author.name}", icon_url=f"{ctx.message.author.avatar_url}")
       await ctx.send(embed=embed)

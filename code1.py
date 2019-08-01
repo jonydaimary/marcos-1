@@ -135,32 +135,32 @@ async def avatar(ctx, user: discord.Member=None):
         embed.set_image(url = user.avatar_url)
         await ctx.send(embed=embed)
 
-@client.command(pass_context = True)
+
+@client.command(pass_context=True)
 @commands.has_permissions(administrator=True)
-async def poll(ctx, question, *options:str):
-    if len(options) <=1:
-        await ctx.send('Joker needs more than one option to conduct poll!!')
-        return
-    if len(options) > 10:
-        await ctx.send("Joker Can't accept more than 10 options to conduct poll!")
-        return
+async def poll(ctx, question, *options: str):
+        if len(options) <= 1:
+            await ctx.say('You need more than one option to make a poll!')
+            return
+        if len(options) > 10:
+            await ctx.say('You cannot make a poll for more than 10 things!')
+            return
 
-    if len(options) == 2 and options[0] == 'yes' and options[1] == 'no':
-        reactions = ['👍', '👎']
-
-    else:
-        reactions = ['1\u20e3', '2\u20e3', '3\u20e3', '4\u20e3', '5\u20e3', '6\u20e3', '7\u20e3', '8\u20e3', '9\u20e3', '\U0001f51f']
+        if len(options) == 2 and options[0] == 'yes' and options[1] == 'no':
+            reactions = ['👍', '👎']
+        else:
+            reactions = ['1\u20e3', '2\u20e3', '3\u20e3', '4\u20e3', '5\u20e3', '6\u20e3', '7\u20e3', '8\u20e3', '9\u20e3', '\U0001f51f']
 
         description = []
         for x, option in enumerate(options):
             description += '\n {} {}'.format(reactions[x], option)
-            embed = discord.Embed(title=question, description=''.join(description), color=0XFF69B4)
-            react_message = await ctx.send(embed=embed)
+            embed = discord.Embed(title=question, description=''.join(description), color=0Xf9fcfc)
+            react_message = await client.say(embed=embed)
         for reaction in reactions[:len(options)]:
-            await react_message.add_reaction(reaction)
-            embed.set_footer(text='poll ID: {}'.format(react_message.id))
-            await react_message.edit(embed=embed)	
-	
+            await client.add_reaction(react_message, reaction)
+            embed.set_footer(text=f"Poll ID: {react_message.id}",)
+            await client.edit_message(react_message, embed=embed)
+
 
 @client.command(pass_context=True)
 async def slap(ctx, user: discord.Member = None):

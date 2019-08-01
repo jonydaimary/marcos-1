@@ -75,7 +75,7 @@ async def clear(ctx, number: int):
 async def announce(ctx, channel: discord.TextChannel=None, *, msg: str=None):
     member = ctx.message.author
     if channel is None or msg is None:
-        await ctx.send('```Proper usage is \n\n!!announce #channel matter```')
+        await ctx.send('```Proper usage is \n\n>announce #channel matter```')
         return
     else:
         if member.guild_permissions.administrator == False:
@@ -97,7 +97,7 @@ async def announce(ctx, channel: discord.TextChannel=None, *, msg: str=None):
 @client.command(pass_context = True)
 async def userinfo(ctx, user: discord.Member=None):
     if user is None:
-      await ctx.send('```The proper usage is \n!!userinfo <@user>```')
+      await ctx.send('```The proper usage is \n>userinfo <@user>```')
       return
     else:
       gettime = discord.utils.snowflake_time(member.id)
@@ -189,7 +189,7 @@ async def slap(ctx, user: discord.Member = None):
 @client.command(pass_context=True)
 async def kiss(ctx, user: discord.Member = None):
     if user == None:
-        await ctx.send("```Proper usage is\n\n!!kiss <mention a user>```")
+        await ctx.send("```Proper usage is\n\n>kiss <mention a user>```")
     if user.id == ctx.message.author.id:
         await ctx.send("Goodluck kissing yourself {}".format(ctx.message.author.mention))
     else:
@@ -202,7 +202,7 @@ async def kiss(ctx, user: discord.Member = None):
 @client.command(pass_context=True)
 async def hug(ctx, user: discord.Member = None):
     if user == None:
-        await ctx.send("```Proper usage is\n\n!!hug <mention a user>```")
+        await ctx.send("```Proper usage is\n\n>hug <mention a user>```")
     if user.id == ctx.message.author.id:
         await ctx.send("{} Wanted to hug himself/herself , good luck on that you will look like an idiot trying to do it".format(user.mention))
     else:
@@ -512,7 +512,7 @@ async def lyrics(ctx, *, track:str = None):
 @client.command(pass_context=True, aliases=["Help"])
 async def help(ctx):
     embed = discord.Embed(color=0Xf9fcfc)
-    embed.set_author(name="Command prefix: !!")
+    embed.set_author(name="Command prefix: >")
     embed.add_field(name="__Administrator commands__", value="`serverinfo  󠇰󠇰 :` server's information . \n`membercount  󠇰󠇰:` how many servers mamber in. \n`poll  󠇰󠇰   󠇰󠇰   󠇰󠇰󠇰󠇰 :` Polling . \n`ban  󠇰󠇰   󠇰󠇰  󠇰󠇰   :` ban the user. \n`clear  󠇰󠇰   󠇰 󠇰󠇰 󠇰󠇰 :` clear messages. \n`announce   󠇰󠇰  󠇰󠇰󠇰󠇰:` To announce the entered **#channel** n **matter** . ", inline=True)
     embed.add_field(name="__Animals commands__", value="`fox  󠇰󠇰   󠇰󠇰  󠇰󠇰   󠇰󠇰:` fox images. \n`dog   󠇰󠇰  󠇰󠇰   󠇰󠇰 󠇰󠇰 :` dog images. \n`cat   󠇰󠇰   󠇰󠇰 󠇰󠇰   󠇰󠇰:` cat images. \n`bird   󠇰󠇰   󠇰󠇰  󠇰󠇰󠇰󠇰 :` bird images. ")
     embed.add_field(name="__Info commands__", value="`botinfo   󠇰󠇰 󠇰󠇰 󠇰󠇰 :` Information about this BOT. \n`userinfo  󠇰󠇰 󠇰󠇰 󠇰󠇰 :` user's information. \n`ping  󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰  󠇰󠇰 󠇰󠇰 :` pong. \n`movie  󠇰󠇰 󠇰󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰 󠇰󠇰 󠇰󠇰:` movie name. ")

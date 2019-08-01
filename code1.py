@@ -84,15 +84,6 @@ async def announce(ctx, channel: discord.TextChannel=None, *, msg: str=None):
             await channel.send(msg)
 
 	
-#@client.command(pass_context = True)
-#@commands.has_permissions(administrator=True) 
-#async def announce(ctx, channel: discord.TextChannel=None, *, msg: str=None):
-#    if channel is None or msg is None:
-#        await ctx.send(" ```Proper usage is\n\nannounce #channel <matter>```")
-#    else:
-#        await channel.send(msg)	
-
-	
 @client.command(pass_context = True)
 async def userinfo(ctx, user: discord.Member=None):
     if user is None:

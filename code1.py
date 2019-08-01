@@ -155,11 +155,11 @@ async def poll(ctx, question, *options: str):
         for x, option in enumerate(options):
             description += '\n {} {}'.format(reactions[x], option)
             embed = discord.Embed(title=question, description=''.join(description), color=0Xf9fcfc)
-            react_message = await client.send(embed=embed)
+            react_message = await ctx.send(embed=embed)
         for reaction in reactions[:len(options)]:
-            await client.add_reaction(react_message, reaction)
+            await ctx.add_reaction(react_message, reaction)
             embed.set_footer(text=f"Poll ID: {react_message.id}",)
-            await client.edit_message(react_message, embed=embed)
+            await ctx.edit_message(react_message, embed=embed)
 
 
 @client.command(pass_context=True)

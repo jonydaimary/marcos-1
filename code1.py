@@ -517,4 +517,4 @@ async def help(ctx):
     await ctx.send(embed=embed)
 	
 
-client.run(os.getenv('Token')) 
+client.run(os.getenv('TOKEN')) 

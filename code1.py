@@ -24,6 +24,23 @@ client.remove_command('help')
 async def status_task():
     while True:
         await client.change_presence(status=discord.Status.idle, activity=discord.Game(">help",))
+	
+	
+async def task():
+    while True:
+        channel = client.get_channel(593784941204996096)
+        address = "https://www.rrrather.com/botapi"
+        data = requests.get(address).json()
+        nsfw_check = data['nsfw']
+        if nsfw_check == False:
+            embed = discord.Embed(title=data['title'], description=f"**1){data['choicea']} \n \n2){data['choiceb']}** \n \n[Wanna know what others said about this question in www.rrrather.com? Click me...]({data['link']})", color=0xff69bf)
+            embed.set_author(name="It's question time folks...", icon_url=channel.guild.icon_url)
+            embed.set_footer(text=channel.guild.name)
+            embed.timestamp = datetime.datetime.utcnow()
+            await channel.send(embed=embed)
+            await asyncio.sleep(10)
+        elif nsfw_check == True:
+            await asyncio.sleep(1)	
 
 
 @client.event
@@ -501,7 +518,20 @@ async def lyrics(ctx, *, track:str = None):
             for chunk in [lyrics[i:i+2000] for i in range(0, len(lyrics), 2000)]:
                 await ctx.author.send(chunk)           
 
-		
+
+@client.command(pass_context=True)
+async def t(ctx, message: str = None):
+    if message == None:
+        await ctx.send("**CRY N__ can't talk to you unless you say anything to me ``%talk <message>``**")
+    else:
+        address = f"https://some-random-api.ml/chatbot?message={message}"
+        data = requests.get(address).json()
+        reply = data['response']
+        await ctx.trigger_typing()
+        await asyncio.sleep(1)
+        await ctx.send(reply) 
+			   
+			   
 @client.command(pass_context=True, aliases=["Help"])
 async def help(ctx):
     embed = discord.Embed(color=0Xf9fcfc)

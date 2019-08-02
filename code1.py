@@ -29,7 +29,7 @@ async def status_task():
 	
 async def task():
     while True:
-        channel = client.get_channel(593784941204996096)
+        channel = client.get_channel(605305731209494528)
         address = "https://www.rrrather.com/botapi"
         data = requests.get(address).json()
         nsfw_check = data['nsfw']

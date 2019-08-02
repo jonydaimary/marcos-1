@@ -520,9 +520,9 @@ async def lyrics(ctx, *, track:str = None):
 
 
 @client.command(pass_context=True)
-async def t(ctx, message: str = None):
+async def talk(ctx, message: str = None, aliases=["t"])
     if message == None:
-        await ctx.send("**CRY N__ can't talk to you unless you say anything to me ``%talk <message>``**")
+        await ctx.send("**CRY N__ can't talk to you unless you say anything to me ``>talk <message>``**")
     else:
         address = f"https://some-random-api.ml/chatbot?message={message}"
         data = requests.get(address).json()

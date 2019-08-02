@@ -519,8 +519,8 @@ async def lyrics(ctx, *, track:str = None):
                 await ctx.author.send(chunk)           
 
 
-@client.command(pass_context=True)
-async def talk(ctx, message: str = None, aliases=["t"])
+@client.command(pass_context=True, aliases=["t"])
+async def talk(ctx, message: str = None,):
     if message == None:
         await ctx.send("**CRY N__ can't talk to you unless you say anything to me ``>talk <message>``**")
     else:

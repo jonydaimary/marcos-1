@@ -547,6 +547,19 @@ async def information(ctx):
     embed.add_field(name="CHAT MODERATOR", value=rule_4, inline=False)
     await ctx.send(embed=embed)
 	
+
+@client.command(pass_context = True)
+@commands.has_permissions(administrator=True)
+async def links(ctx):
+    rule_1 = "https://discord.gg/gdK3xBN"
+    rule_2 = "[click to invite](https://discordapp.com/api/oauth2/authorize?client_id=602824587629297664&permissions=130065&scope=bot)"
+    rule_3 = "[click to invite](https://discordapp.com/api/oauth2/authorize?client_id=592988250591985715&permissions=8&scope=bot)"
+    embed = discord.Embed(title="**SEXTERNAL LINKS**", description="In this section, you will find some of the common links related to the server.", color=0X333331)
+    embed.add_field(name="Server Invite", value=rule_1, inline=False)
+    embed.add_field(name="<@602824587629297664> invite link", value=rule_2, inline=False)
+    embed.add_field(name="<@592988250591985715> invite link", value=rule_3, inline=False)
+    await ctx.send(embed=embed)
+			   
 			   
 @client.command(pass_context=True, aliases=["Help"])
 async def help(ctx):

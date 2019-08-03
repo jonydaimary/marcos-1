@@ -532,22 +532,20 @@ async def talk(ctx, message: str = None,):
         await asyncio.sleep(1)
         await ctx.send(reply) 
 
-			   
-			  
+			   			  
 @client.command(pass_context = True)
 @commands.has_permissions(administrator=True)
-async def rules(ctx):
+async def information(ctx):
     rule_1 = "The head honchos of the server.\n<@591996301311213598>"
     rule_2 = "The senior staff members of the server, these users solve staffs' problems, and manages the server's activities.\n<@586190462331912192>\n<@498378677512437762>"
     rule_3 = "These users keep the server safe from harm and should be the first people you message should you need help.\n<@436422568849702942>"
     rule_4 = "These users are the junior staff members, who moderate the chats and delete inappropriate messages."
-    embed = discord.Embed(title="**STAFF ROLES**", description="These people ensure that the usage of this environment reflects the guidelines as illustrated in the rules. Staff are sometimes handpicked, and sometimes there is an application process. They help to moderate and enhance the server, and always have the final decision.", color=0X333331)
-    embed.add_field(name="Owner", value=rule_1, inline=False)
-    embed.add_field(name="Administrator", value=rule_2, inline=False)
-    embed.add_field(name="Moderator", value=rule_3, inline=False)
-    embed.add_field(name="Chat Moderator", value=rule_4, inline=False)
+    embed = discord.Embed(title="**STAFF ROLES**", description="These people ensure that the usage of this environment reflects the guidelines as illustrated in the rules. Staff are sometimes handpicked, and sometimes there is an application process. They help to moderate and enhance the server, and always have the final decision.\nnone", color=0X333331)
+    embed.add_field(name="**Owner**", value=rule_1, inline=False)
+    embed.add_field(name="**Administrator**", value=rule_2, inline=False)
+    embed.add_field(name="**Senior Moderator**", value=rule_3, inline=False)
+    embed.add_field(name="**Chat Moderator**", value=rule_4, inline=False)
     await ctx.send(embed=embed)
-
 	
 			   
 @client.command(pass_context=True, aliases=["Help"])

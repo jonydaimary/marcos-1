@@ -564,9 +564,9 @@ async def links(ctx):
 @client.command(pass_context = True)
 @commands.has_permissions(administrator=True)
 async def rules(ctx):
-    rule_1 = "Follow and Respect the Rules :wink:\n  1/ Respect all members at all times.\n2/ No spam or advertising of other Discord servers.\n 3/ No mic spam or voice channel annoyance (this goes for hopping too)\n 4/ No PM harassment (suggest you modify your privacy settings to prevent any occurrences).\n 5/ No racism or bigotry allowed.\n 6/ No begging for roles or permissions.\n 7/ No marketing, this is not the place to sell anything.\n 8/ No 'self-bots' these are quite an annoyance.\n 9/ Do not argue with members of staff, their decision is final.\n 10/ No staff impersonation\n 11/ Don't Do Dm Advertise Or You got A Permanent Ban.\n 12/ No spam  advertising of your Discord servers.\n 13/ Do not use bot commands in any other channel than #bot-spam.\n\nx-----------------------ThankYou !!! :D-----------------------x"
+    rule_1 = ":hiiiiii: Follow and Respect the Rules :hiiiiii:\n  1/ Respect all members at all times.\n2/ No spam or advertising of other Discord servers.\n 3/ No mic spam or voice channel annoyance (this goes for hopping too)\n 4/ No PM harassment (suggest you modify your privacy settings to prevent any occurrences).\n 5/ No racism or bigotry allowed.\n 6/ No begging for roles or permissions.\n 7/ No marketing, this is not the place to sell anything.\n 8/ No 'self-bots' these are quite an annoyance.\n 9/ Do not argue with members of staff, their decision is final.\n 10/ No staff impersonation\n 11/ Don't Do Dm Advertise Or You got A Permanent Ban.\n 12/ No spam  advertising of your Discord servers.\n 13/ Do not use bot commands in any other channel than #bot-spam.\n\nx-----------------------ThankYou !!! :D-----------------------x"
     embed = discord.Embed(title="SERVER RULES", description=None, color=0X333331)
-    embed.add_field(name="🛡️:hiiiiii: Have a Great Time Here in This Discord Server :hiiiiii:🛡️", value=rule_1, inline=False)
+    embed.add_field(name="🛡️ Have a Great Time Here in This Discord Server 🛡️", value=rule_1, inline=False)
     await ctx.send(embed=embed)
 			   
 		   			   

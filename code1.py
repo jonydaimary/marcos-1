@@ -225,7 +225,7 @@ async def botinfo(ctx):
     User3 = await client.fetch_user('591996301311213598')
     User4 = await client.fetch_user('436422568849702942')
     embed = discord.Embed(title="CRY N____ information", color=0Xf9fcfc)
-    embed.set_thumbnail(url= author.avatar_url)
+    embed.set_thumbnail(url= bot.avatar_url)
     embed.set_footer(text=f'Requested by {ctx.message.author.name}', icon_url=f'{ctx.message.author.avatar_url}')
     embed.timestamp = datetime.datetime.utcnow()
     embed.set_author(name=f"This is Official BOT of {ctx.guild.name} server")

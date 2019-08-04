@@ -461,7 +461,7 @@ async def animeshow(ctx, *, name:str = None):
 async def spam(ctx, count: int, *, SecretCocoSpam: str):
         await ctx.message.delete()
         for i in range(count):
-            await asyncio.sleep(5.0)
+            await asyncio.sleep(1)
             await ctx.send(SecretCocoSpam)
         else:
             return; 
@@ -554,7 +554,7 @@ async def links(ctx):
     rule_1 = "https://discord.gg/gdK3xBN"
     rule_2 = "<@602824587629297664> [click to invite](https://discordapp.com/api/oauth2/authorize?client_id=602824587629297664&permissions=130065&scope=bot)"
     rule_3 = "<@592988250591985715> [click to invite](https://discordapp.com/api/oauth2/authorize?client_id=592988250591985715&permissions=8&scope=bot)"
-    embed = discord.Embed(title="**SEXTERNAL LINKS**", description="In this section, you will find some of the common links related to the server.", color=0X333331)
+    embed = discord.Embed(title="EXTERNAL LINKS", description="In this section, you will find some of the common links related to the server.", color=0X333331)
     embed.add_field(name="Server Invite link", value=rule_1, inline=False)
     embed.add_field(name="POKECORD GURU invite link", value=rule_2, inline=False)
     embed.add_field(name="CRY N____invite link", value=rule_3, inline=False)

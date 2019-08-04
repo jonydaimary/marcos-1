@@ -275,7 +275,7 @@ async def movie(ctx, *, name:str=None):
 
 
 @client.command(pass_context=True)
-async def lovedetect(ctx, user: discord.Member = None, *, user2: discord.Member = None):
+async def ship(ctx, user: discord.Member = None, *, user2: discord.Member = None):
     shipuser1 = user.name
     shipuser2 = user2.name
     useravatar1 = user.avatar_url
@@ -576,9 +576,9 @@ async def help(ctx):
     embed.set_author(name="Command prefix: >")
     embed.add_field(name="__Administrator commands__", value="`serverinfo  󠇰󠇰 :` server's information . \n`membercount  󠇰󠇰:` how many servers mamber in. \n`poll  󠇰󠇰   󠇰󠇰   󠇰󠇰󠇰󠇰 :` Polling . \n`ban  󠇰󠇰   󠇰󠇰  󠇰󠇰   :` ban the user. \n`clear  󠇰󠇰   󠇰 󠇰󠇰 󠇰󠇰 :` clear messages. \n`announce   󠇰󠇰  󠇰󠇰󠇰󠇰:` To announce the entered **#channel** n **matter** . ", inline=True)
     embed.add_field(name="__Animals commands__", value="`fox  󠇰󠇰   󠇰󠇰  󠇰󠇰   󠇰󠇰:` fox images. \n`dog   󠇰󠇰  󠇰󠇰   󠇰󠇰 󠇰󠇰 :` dog images. \n`cat   󠇰󠇰   󠇰󠇰 󠇰󠇰   󠇰󠇰:` cat images. \n`bird   󠇰󠇰   󠇰󠇰  󠇰󠇰󠇰󠇰 :` bird images.", inline=True)
-    embed.add_field(name="__Info commands__", value="`botinfo   󠇰󠇰 󠇰󠇰 󠇰󠇰 :` Information about this BOT. \n`userinfo  󠇰󠇰 󠇰󠇰 󠇰󠇰 :` user's information. \n `ping  󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰  󠇰󠇰 󠇰󠇰 :` pong. \n`movie  󠇰󠇰 󠇰󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰 󠇰󠇰 󠇰󠇰:` movie name. ", inline=True)
+    embed.add_field(name="__Info commands__", value="`botinfo   󠇰󠇰 󠇰󠇰 󠇰󠇰 :` Information about this BOT. \n`userinfo  󠇰󠇰 󠇰󠇰 󠇰󠇰 :` user's information. \n`movie  󠇰󠇰 󠇰󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰 󠇰󠇰 󠇰󠇰:` movie name. ", inline=True)
     embed.add_field(name="__Fun commands__", value="`joke   󠇰󠇰 󠇰󠇰   󠇰󠇰 󠇰󠇰 :` tell you a joke!. \n`meme   󠇰󠇰 󠇰󠇰󠇰󠇰 󠇰󠇰 󠇰󠇰  󠇰󠇰 :` meme image. \n`talk 󠇰󠇰 󠇰󠇰󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰󠇰󠇰 󠇰󠇰 󠇰󠇰 :` It's simple, It activates the chatbot and replies to your messages. \n`animeshow 󠇰󠇰   󠇰 󠇰󠇰 󠇰󠇰:` Gives info about the anime show that you've searched.", inline=True)
-    embed.add_field(name="__Images commands__", value="`avatar  󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 :` Avatar. \n`marvel  󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 :` Marvel GIF. \n`joker  󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 :` Joker GIF. \n`slap  󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰󠇰󠇰  :` slap the user. \n`hug  󠇰󠇰󠇰󠇰 󠇰󠇰  󠇰󠇰󠇰󠇰  󠇰󠇰 󠇰󠇰 󠇰󠇰 :`  hug a user. \n`kiss 󠇰󠇰 󠇰󠇰  󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 :` kiss the user. \n`lovedetect 󠇰󠇰 󠇰󠇰 :` lovedetect **user1** **user2**. \n\n__**more feautures coming soon...**__", inline=True)
+    embed.add_field(name="__Images commands__", value="`avatar  󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 :` Avatar. \n`marvel  󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 :` Marvel GIF. \n`joker  󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 :` Joker GIF. \n`slap  󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰󠇰󠇰  :` slap the user. \n`hug  󠇰󠇰󠇰󠇰 󠇰󠇰  󠇰󠇰󠇰󠇰  󠇰󠇰 󠇰󠇰 󠇰󠇰 :`  hug a user. \n`kiss 󠇰󠇰 󠇰󠇰  󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 :` kiss the user. \n`ship 󠇰󠇰  󠇰󠇰   󠇰󠇰  󠇰󠇰 :` lovedetect **user1** **user2**. \n\n__**more feautures coming soon...**__", inline=True)
     embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/592605488265428992/593310963034226693/mimikyu-2-622x350.png') 
     embed.set_footer(text=f"Requested by {ctx.message.author.name}", icon_url=f"{ctx.message.author.avatar_url}")
     embed.timestamp = datetime.datetime.utcnow()  	

@@ -231,7 +231,7 @@ async def botinfo(ctx):
     embed.set_author(name=f"This is Official BOT of {ctx.guild.name} server")
     embed.add_field(name="__**name**___", value="CRY N____", inline = True)
     embed.add_field(name="__**id**__", value="520267296506249216", inline = True)
-    embed.add_field(name="__**prefix**__", value="!!", inline = True)
+    embed.add_field(name="__**prefix**__", value=">", inline = True)
     embed.add_field(name="__**language**__", value="Python", inline = True)
     embed.add_field(name="__**Creator**__", value=User.mention, inline = True)
     embed.add_field(name="__**Special Thanks To**__", value=f"{User2.mention} \n{User3.mention} \n{User4.mention}")

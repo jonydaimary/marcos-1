@@ -181,11 +181,11 @@ async def poll(ctx, question, *options: str):
 @client.command(pass_context=True)
 async def slap(ctx, user: discord.Member = None):
     if user == None:
-        await ctx.send(f"{ctx.message.author.mention} ```Proper usage is\n\n>slap <mention a user>```")
+        await ctx.send(f"{ctx.message.author.mention} **Proper usage is**\n\n`>slap <mention a user>`")
     if user.id == ctx.message.author.id:
         await ctx.send("Goodluck slaping yourself {}".format(ctx.message.author.mention))
     else:
-        gifs = ["http://rs20.pbsrc.com/albums/b217/strangething/flurry-of-blows.gif?w=280&h=210&fit=crop", "https://media.giphy.com/media/LB1kIoSRFTC2Q/giphy.gif", "https://i.imgur.com/4MQkDKm.gif"]
+        gifs = ["http://rs20.pbsrc.com/albums/b217/strangething/flurry-of-blows.gif?w=280&h=210&fit=crop", "https://media.giphy.com/media/LB1kIoSRFTC2Q/giphy.gif", "https://i.imgur.com/4MQkDKm.gif", "https://cdn.weeb.sh/images/HkJ6-e91z.gif", "https://cdn.weeb.sh/images/HkskD56OG.gif"]
         embed = discord.Embed(title=f"{ctx.message.author.name} Just slapped the shit out of {user.name}!", color=0Xf9fcfc)
         embed.set_image(url=random.choice(gifs))
         await ctx.send(embed=embed)	
@@ -195,11 +195,11 @@ async def slap(ctx, user: discord.Member = None):
 @client.command(pass_context=True)
 async def kiss(ctx, user: discord.Member = None):
     if user == None:
-        await ctx.send("```Proper usage is\n\n>kiss <mention a user>```")
+        await ctx.send("**Proper usage is**\n\n`>kiss <mention a user>`")
     if user.id == ctx.message.author.id:
         await ctx.send("Goodluck kissing yourself {}".format(ctx.message.author.mention))
     else:
-        randomurl = ["https://media3.giphy.com/media/G3va31oEEnIkM/giphy.gif", "https://i.imgur.com/eisk88U.gif", "https://media1.tenor.com/images/e4fcb11bc3f6585ecc70276cc325aa1c/tenor.gif?itemid=7386341", "http://25.media.tumblr.com/6a0377e5cab1c8695f8f115b756187a8/tumblr_msbc5kC6uD1s9g6xgo1_500.gif"]
+        randomurl = ["https://media3.giphy.com/media/G3va31oEEnIkM/giphy.gif", "https://i.imgur.com/eisk88U.gif", "https://media1.tenor.com/images/e4fcb11bc3f6585ecc70276cc325aa1c/tenor.gif?itemid=7386341", "http://25.media.tumblr.com/6a0377e5cab1c8695f8f115b756187a8/tumblr_msbc5kC6uD1s9g6xgo1_500.gif", "https://cdn.weeb.sh/images/SJ--2auDZ.gif"]
         embed = discord.Embed(title=f"{user.name} You just got a kiss from {ctx.message.author.name}", color=0Xf9fcfc)
         embed.set_image(url=random.choice(randomurl))
         await ctx.send(embed=embed)	
@@ -208,11 +208,11 @@ async def kiss(ctx, user: discord.Member = None):
 @client.command(pass_context=True)
 async def hug(ctx, user: discord.Member = None):
     if user == None:
-        await ctx.send("```Proper usage is\n\n>hug <mention a user>```")
+        await ctx.send("**Proper usage is**\n\n`>hug <mention a user>`")
     if user.id == ctx.message.author.id:
         await ctx.send("{} Wanted to hug himself/herself , good luck on that you will look like an idiot trying to do it".format(user.mention))
     else:
-        randomurl = ["http://gifimage.net/wp-content/uploads/2017/09/anime-hug-gif-5.gif", "https://media1.tenor.com/images/595f89fa0ea06a5e3d7ddd00e920a5bb/tenor.gif?itemid=7919037", "https://media.giphy.com/media/NvkwNVuHdLRSw/giphy.gif"]
+        randomurl = ["https://cdn.weeb.sh/images/ryMqdOXvZ.gif", "https://cdn.weeb.sh/images/SyQ0_umD-.gif", "http://gifimage.net/wp-content/uploads/2017/09/anime-hug-gif-5.gif", "https://media1.tenor.com/images/595f89fa0ea06a5e3d7ddd00e920a5bb/tenor.gif?itemid=7919037", "https://media.giphy.com/media/NvkwNVuHdLRSw/giphy.gif", "https://cdn.weeb.sh/images/rJnKu_XwZ.gif", "https://cdn.weeb.sh/images/Bk5T2_1Ob.gif"]
         embed = discord.Embed(title=f"{user.name} You just got a hug from {ctx.message.author.name}", color=0Xf9fcfc)
         embed.set_image(url=random.choice(randomurl))
         await ctx.send(embed=embed)  	

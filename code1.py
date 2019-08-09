@@ -52,19 +52,7 @@ async def on_ready():
     print('Started new here ')
     print('Created by MARCOS々DMRY')
     client.loop.create_task(status_task()) 
-
-	
-@client.event
-async def on_member_join(member):
-    channel = client.get_channel(593696190730862592)
-    person_count = len([member for member in member.guild.members if not member.bot])
-    embed = discord.Embed(title=f'Welcome {member.name} to {member.guild.name}', description='**__Thanks for Joining__**', color=0X333233)
-    embed.set_thumbnail(url=member.avatar_url) 
-    embed.set_image(url=member.avatar_url)
-    embed.add_field(name='__Join position__', value='{}'.format(str(member.guild.member_count)), inline=True)
-    embed.add_field(name='Time of joining', value=member.joined_at.date(), inline=True)
-    await channel.send(channel, embed=embed)    
-
+  
 	
 @client.command(pass_context = True)
 async def meme(ctx):
@@ -80,8 +68,7 @@ async def meme(ctx):
 #@client.command(pass_context=True)
 #async def test(ctx):
 	#await ctx.send("Hello")
-	
-	
+		
 @client.command(pass_context = True)
 @commands.has_permissions(manage_messages = True)
 async def clear(ctx, number: int):
@@ -191,7 +178,6 @@ async def slap(ctx, user: discord.Member = None):
         await ctx.send(embed=embed)	
 
 	
-
 @client.command(pass_context=True)
 async def kiss(ctx, user: discord.Member = None):
     if user == None:
@@ -585,8 +571,8 @@ async def help(ctx):
     embed.set_author(name="Command prefix: >")
     embed.add_field(name="__Admin cmds__", value="`serverinfo  󠇰󠇰 :` server's information . \n`poll  󠇰󠇰   󠇰󠇰   󠇰󠇰󠇰󠇰 :` Polling . \n`clear  󠇰󠇰   󠇰 󠇰󠇰 󠇰󠇰 :` clear messages. \n`announce   󠇰󠇰  󠇰󠇰󠇰󠇰:` To announce the entered **#channel** n **matter** . ", inline=True)
     embed.add_field(name="__Animals cmds__", value="`fox  󠇰󠇰   󠇰󠇰  󠇰󠇰   󠇰󠇰:` fox images. \n`dog   󠇰󠇰  󠇰󠇰   󠇰󠇰 󠇰󠇰 :` dog images. \n`cat   󠇰󠇰   󠇰󠇰 󠇰󠇰   󠇰󠇰:` cat images. \n`bird   󠇰󠇰   󠇰󠇰  󠇰󠇰󠇰󠇰 :` bird images.", inline=True)
-    embed.add_field(name="__Info cmds__", value="`botinfo   󠇰󠇰 󠇰󠇰 󠇰󠇰 :` Information about this BOT. \n`userinfo  󠇰󠇰 󠇰󠇰 󠇰󠇰 :` user's information. \n`movie  󠇰󠇰 󠇰󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰 󠇰󠇰 󠇰󠇰:` movie name. ", inline=True)
-    embed.add_field(name="__Fun cmds__", value="`joke   󠇰󠇰 󠇰󠇰   󠇰󠇰 󠇰󠇰 :` tell you a joke!. \n`meme   󠇰󠇰 󠇰󠇰󠇰󠇰 󠇰󠇰 󠇰󠇰  󠇰󠇰 :` meme image. \n`talk 󠇰󠇰 󠇰󠇰󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰󠇰󠇰 󠇰󠇰 󠇰󠇰 :` It's simple, It activates the chatbot and replies to your messages. \n`animeshow 󠇰󠇰   󠇰 󠇰󠇰 󠇰󠇰:` Gives info about the anime show that you've searched.", inline=True)
+    embed.add_field(name="__Info cmds__", value="`botinfo   󠇰󠇰 󠇰󠇰 󠇰󠇰 :` Information about this BOT. \n`userinfo  󠇰󠇰 󠇰󠇰 󠇰󠇰 :` user's information. \n`movie  󠇰󠇰 󠇰󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰 󠇰󠇰 󠇰󠇰:` movie name. \n`animeshow 󠇰󠇰   󠇰 󠇰󠇰 󠇰󠇰:` Gives info about the anime show that you've searched", inline=True)
+    embed.add_field(name="__Fun cmds__", value="`joke   󠇰󠇰 󠇰󠇰   󠇰󠇰 󠇰󠇰 :` tell you a joke!. \n`meme   󠇰󠇰 󠇰󠇰󠇰󠇰 󠇰󠇰 󠇰󠇰  󠇰󠇰 :` meme image. \n`talk 󠇰󠇰 󠇰󠇰󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰󠇰󠇰 󠇰󠇰 󠇰󠇰 :` It's simple, It activates the chatbot and replies to your messages.", inline=True)
     embed.add_field(name="__Images cmds__", value="`avatar  󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 :` Avatar. \n`slap  󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰󠇰󠇰  :` slap the user. \n`hug  󠇰󠇰󠇰󠇰 󠇰󠇰  󠇰󠇰󠇰󠇰  󠇰󠇰 󠇰󠇰 󠇰󠇰 :`  hug a user. \n`kiss 󠇰󠇰 󠇰󠇰  󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 󠇰󠇰 :` kiss the user. \n`ship 󠇰󠇰  󠇰󠇰   󠇰󠇰  󠇰󠇰 :` lovedetect **user1** **user2**. \n\n__**more feautures coming soon...**__", inline=True)
     embed.set_thumbnail(url='https://cdn.discordapp.com/avatars/592988250591985715/66a9d3a266b20511c09c6410b6db3b76.png?size=256') 
     embed.set_footer(text=f"Requested by {ctx.message.author.name}", icon_url=f"{ctx.message.author.avatar_url}")

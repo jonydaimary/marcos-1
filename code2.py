@@ -73,3 +73,4 @@ async def linkss(ctx):
         await ctx.send(embed=embed)
 
 
+client.run(os.getenv('TOKEN'))

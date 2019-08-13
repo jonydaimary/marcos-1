@@ -60,5 +60,16 @@ async def on_member_join(member):
     await channel.send(channel, embed=embed)	
 	
 	
+@client.command(pass_context = True)
+async def linkss(ctx):
+    if ctx.message.author.id == "498378677512437762":    
+        rule_1 = "https://discord.gg/gdK3xBN"
+        rule_2 = "<@602824587629297664> [click to invite](https://discordapp.com/api/oauth2/authorize?client_id=602824587629297664&permissions=130065&scope=bot)"
+        rule_3 = "<@592988250591985715> [click to invite](https://discordapp.com/api/oauth2/authorize?client_id=592988250591985715&permissions=8&scope=bot)"
+        embed = discord.Embed(title="EXTERNAL LINKS", description="In this section, you will find some of the common links related to the server.", color=0X33f351)
+        embed.add_field(name="Server Invite link", value=rule_1, inline=False)
+        embed.add_field(name="POKECORD GURU invite link", value=rule_2, inline=False)
+        embed.add_field(name="CRY N____invite link", value=rule_3, inline=False)
+        await ctx.send(embed=embed)
 
 

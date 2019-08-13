@@ -1,3 +1,3 @@
 wprker: python code.py
-wprker: python me.py
+wprker2: python code1.py
 

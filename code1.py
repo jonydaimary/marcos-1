@@ -50,7 +50,8 @@ async def on_ready():
 
 @client.event
 async def on_member_join(member):
-    channel = client.get_channel(593696190730862592)
+    guild = client_id = "592262404071620610"
+    channel = client.get_channel(593696190730862592)   
     person_count = len([member for member in member.guild.members if not member.bot])
     embed = discord.Embed(title=f'Welcome {member.name} to {member.guild.name}', description='**__Thanks for Joining__**', color=0X333233)
     embed.set_thumbnail(url=member.avatar_url) 
@@ -58,19 +59,9 @@ async def on_member_join(member):
     embed.add_field(name='__Join position__', value='{}'.format(str(member.guild.member_count)), inline=True)
     embed.add_field(name='Time of joining', value=member.joined_at.date(), inline=True)
     await channel.send(channel, embed=embed)	
-	
+        
 
-@client.command(pass_context = True)
-@commands.has_parmissions(498378677512437762=True)
-async def links(ctx):
-    rule_1 = "https://discord.gg/gdK3xBN"
-    rule_2 = "<@602824587629297664> [click to invite](https://discordapp.com/api/oauth2/authorize?client_id=602824587629297664&permissions=130065&scope=bot)"
-    rule_3 = "<@592988250591985715> [click to invite](https://discordapp.com/api/oauth2/authorize?client_id=592988250591985715&permissions=8&scope=bot)"
-    embed = discord.Embed(title="EXTERNAL LINKS", description="In this section, you will find some of the common links related to the server.", color=0X333331)
-    embed.add_field(name="Server Invite link", value=rule_1, inline=False)
-    embed.add_field(name="POKECORD GURU invite link", value=rule_2, inline=False)
-    embed.add_field(name="CRY N____invite link", value=rule_3, inline=False)
-    await ctx.send(embed=embed)
+
 
 
 client.run(os.getenv('TOKEN'))

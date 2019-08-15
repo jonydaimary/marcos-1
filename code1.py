@@ -18,6 +18,10 @@ import aiohttp
 client = commands.Bot(description="cry n___ bot", command_prefix=commands.when_mentioned_or(">"), pm_help = True)
 client.remove_command('help')
 
+async def status_task():
+    while True:
+        await client.change_presence(status=discord.Status.idle)
+
 @client.event
 async def on_ready():
     print('--------')

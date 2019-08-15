@@ -29,8 +29,7 @@ async def on_ready():
     print('Started new here ')
     print('Created by MARCOS々DMRY')
     client.loop.create_task(status_task()) 
-	
-	
+		
 @client.event
 async def on_member_join(member):
     guild = client_id = "592262404071620610"
@@ -43,8 +42,6 @@ async def on_member_join(member):
     embed.add_field(name='Time of joining', value=member.joined_at.date(), inline=True)
     await channel.send(channel, embed=embed)	
         
-
-
 
 
 client.run(os.getenv('TOKEN'))

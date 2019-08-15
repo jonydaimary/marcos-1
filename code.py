@@ -468,42 +468,6 @@ async def talk(ctx, message: str = None,):
         await ctx.send(reply) 
 
 			   			  
-@client.command(pass_context = True)
-@commands.has_permissions(administrator=True)
-async def information(ctx):
-    rule_1 = "The head honchos of the server.\n<@591996301311213598>"
-    rule_2 = "The senior staff members of the server, these users solve staffs' problems, and manages the server's activities.\n<@586190462331912192>\n<@498378677512437762>"
-    rule_3 = "These users keep the server safe from harm and should be the first people you message should you need help.\n<@436422568849702942>"
-    rule_4 = "These users are the junior staff members, who moderate the chats and delete inappropriate messages.\nnone"
-    embed = discord.Embed(title="**STAFF ROLES**", description="These people ensure that the usage of this environment reflects the guidelines as illustrated in the rules. Staff are sometimes handpicked, and sometimes there is an application process. They help to moderate and enhance the server, and always have the final decision.", color=0X333331)
-    embed.add_field(name="OWNER", value=rule_1, inline=False)
-    embed.add_field(name="ADMINISTRATOR", value=rule_2, inline=False)
-    embed.add_field(name="SENIOR MODERATOR", value=rule_3, inline=False)
-    embed.add_field(name="CHAT MODERATOR", value=rule_4, inline=False)
-    await ctx.send(embed=embed)
-	
-
-@client.command(pass_context = True)
-@commands.has_permissions(administrator=True)
-async def links(ctx):
-    rule_1 = "https://discord.gg/gdK3xBN"
-    rule_2 = "<@602824587629297664> [click to invite](https://discordapp.com/api/oauth2/authorize?client_id=602824587629297664&permissions=130065&scope=bot)"
-    rule_3 = "<@592988250591985715> [click to invite](https://discordapp.com/api/oauth2/authorize?client_id=592988250591985715&permissions=8&scope=bot)"
-    embed = discord.Embed(title="EXTERNAL LINKS", description="In this section, you will find some of the common links related to the server.", color=0X333331)
-    embed.add_field(name="Server Invite link", value=rule_1, inline=False)
-    embed.add_field(name="POKECORD GURU invite link", value=rule_2, inline=False)
-    embed.add_field(name="CRY N____invite link", value=rule_3, inline=False)
-    await ctx.send(embed=embed)
-
-			   
-@client.command(pass_context = True)
-@commands.has_permissions(administrator=True)
-async def rules(ctx):
-    rule_1 = ":fire: Follow and Respect the Rules :fire:\n:fire: Respect all members at all times.\n:fire: No spam or advertising of other Discord servers.\n:fire: No mic spam or voice channel annoyance (this goes for hopping too)\n:fire: No PM harassment (suggest you modify your privacy settings to prevent any occurrences).\n:fire: No racism or bigotry allowed.\n:fire: No begging for roles or permissions.\n:fire: No marketing, this is not the place to sell anything.\n:fire: No 'self-bots' these are quite an annoyance.\n:fire: Do not argue with members of staff, their decision is final.\n:fire: No staff impersonation\n:fire: Don't Do Dm Advertise Or You got A Permanent Ban.\n:fire: No spam  advertising of your Discord servers.\n:fire: Do not use bot commands in any other channel than <#605305731209494528>.\n\nx-----------------------ThankYou !!! :D-----------------------x"
-    embed = discord.Embed(title="SERVER RULES", description=None, color=0X333331)
-    embed.add_field(name="🛡️ Have a Great Time Here in This Discord Server 🛡️", value=rule_1, inline=False)
-    await ctx.send(embed=embed)
-			   
 		   			   
 @client.command(pass_context=True, aliases=["Help"])
 async def help(ctx):

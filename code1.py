@@ -82,9 +82,9 @@ async def rules(ctx):
 @client.command(pass_context = True)
 @commands.has_permissions(administrator=True)
 async def membership(ctx):
-    rule_1 = "Benefits /n25% off in <#609196821071527956> /n/nSnipe Freely in channels /n/nReceive 3 invites Free in each invite contest /n/nGet access to custom chat room where are you can invite your friends /n/nmembership includes all passes including the ones we add in future at no extra cost to you /nCost- /n100,000 credits for lifetimes /n20,000 credits for 1 month /n10,000 credits for 1 weekly"
+    rule_1 = "Benefits \n25% off in <#609196821071527956> \n\nSnipe Freely in channels \n\nReceive 3 invites Free in each invite contest \n\nGet access to custom chat room where are you can invite your friends \n\nmembership includes all passes including the ones we add in future at no extra cost to you \nCost- \n100,000 credits for lifetimes \n20,000 credits for 1 month \n10,000 credits for 1 weekly"
     embed = discord.Embed(title="MIMIKIYU WORLD MEMBERSHIP", description=None, color=0X27ece1)
-    embed.add_field(name="What is Mimikiyu World Membership? /nmimikyu membership is a membership for this server which grants you some special features then normal users for monthly/lifetime!", value=rule_1, inline=False)
+    embed.add_field(name="What is Mimikiyu World Membership? \nmimikyu membership is a membership for this server which grants you some special features then normal users for monthly/lifetime!", value=rule_1, inline=False)
     await ctx.send(embed=embed)	
 			   
 		

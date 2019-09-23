@@ -82,9 +82,9 @@ async def rules(ctx):
 @client.command(pass_context = True)
 @commands.has_permissions(administrator=True)
 async def membership(ctx):
-    rule_1 = "Benefits \n<a:tick:625567997146431520> 25% off in <#609196821071527956> \n\n<a:tick:625567997146431520> Snipe freely in channels \n\n<a:tick:625567997146431520> Receive 3 invites Free in each invite contest \n\n<a:tick:625567997146431520> Get access to custom chat room where are you can invite your friends \n\n<a:tick:625567997146431520> Membership includes all passes including the ones we add in future at no extra cost to you \n\nCost- \n:moneybag: 100,000 credits for lifetimes \n\n:moneybag: 20,000 credits for 1 month \n\n:moneybag: 10,000 credits for 1 weekly"
+    rule_1 = "Benefits \n<a:tick:625567997146431520> 25% off in <#609196821071527956> \n\n<a:tick:625567997146431520> Snipe freely in channels \n\n<a:tick:625567997146431520> Receive 3 invites Free in each invite contest \n\n<a:tick:625567997146431520> Get access to custom chat room where are you can invite your friends \n\n<a:tick:625567997146431520> Membership includes all passes including the ones we add in future at no extra cost to you \n\nCost- \n:moneybag: 100,000 credits for lifetimes \n\n:moneybag: 20,000 credits for 1 month \n\n:moneybag: 10,000 credits for 1 weekly \n\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬"
     embed = discord.Embed(title="MIMIKIYU WORLD MEMBERSHIP", description=None, color=0X27ece1)
-    embed.add_field(name="What is Mimikiyu World Membership? \nMimikyu membership is a membership for this server which grants you some special features then normal users for monthly/lifetime!", value=rule_1, inline=False)
+    embed.add_field(name="<a:124:625571171366338571> What is Mimikiyu World Membership? \nMimikyu membership is a membership for this server which grants you some special features then normal users for monthly/lifetime!", value=rule_1, inline=False)
     await ctx.send(embed=embed)	
 			   
 		

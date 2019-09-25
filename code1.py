@@ -76,15 +76,15 @@ async def links(ctx):
 async def rules(ctx):
     rule_1 = ":fire: Follow and Respect the Rules :fire:\n:fire: Respect all members at all times.\n:fire: No spam or advertising of other Discord servers.\n:fire: No mic spam or voice channel annoyance (this goes for hopping too)\n:fire: No PM harassment (suggest you modify your privacy settings to prevent any occurrences).\n:fire: No racism or bigotry allowed.\n:fire: No begging for roles or permissions.\n:fire: No marketing, this is not the place to sell anything.\n:fire: No 'self-bots' these are quite an annoyance.\n:fire: Do not argue with members of staff, their decision is final.\n:fire: No staff impersonation\n:fire: Don't Do Dm Advertise Or You got A Permanent Ban.\n:fire: No spam  advertising of your Discord servers.\n:fire: Do not use bot commands in any other channel than <#605305731209494528>.\n\nx-----------------------ThankYou !!! :D-----------------------x"
     embed = discord.Embed(title="SERVER RULES", description=None, color=0X27ece1)
-    embed.add_field(name="🛡️ Have a Great Time Here in This Discord Server 🛡️", value=rule_1, inline=False)
+    embed.add_field(name="<a:124:625571171366338571> Have a Great Time Here in This Discord Server <a:124:625571171366338571>", value=rule_1, inline=False)
     await ctx.send(embed=embed)
 	
 @client.command(pass_context = True)
 @commands.has_permissions(administrator=True)
 async def membership(ctx):
-    rule_1 = "Benefits- \n<a:tick:625567997146431520> 25% off in <#609196821071527956> \n\n<a:tick:625567997146431520> Snipe freely in channels \n\n<a:tick:625567997146431520> Receive 3 invites Free in each invite contest \n\n<a:tick:625567997146431520> Get access to custom chat room where are you can invite your friends \n\n<a:tick:625567997146431520> Membership includes all passes including the ones we add in future at no extra cost to you \n\nCost- \n:moneybag: 100,000 credits for lifetimes \n\n:moneybag: 20,000 credits for 1 month \n\n:moneybag: 10,000 credits for 1 weekly \n\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬"
-    embed = discord.Embed(title="MIMIKIYU WORLD MEMBERSHIP", description=None, color=0X27ece1)
-    embed.add_field(name="<a:124:625571171366338571> What is Mimikiyu World Membership? \nMimikyu membership is a membership for this server which grants you some special features then normal users for monthly/lifetime!", value=rule_1, inline=False)
+    rule_1 = "Benefits- \n<a:tick:625567997146431520> 25% off in <#609196821071527956> \n\n<a:tick:625567997146431520> Snipe freely in channels \n\n<a:tick:625567997146431520> Receive 3 invites Free in each invite contest \n\n<a:tick:625567997146431520> Get access to custom chat room where are you can invite your friends \n\n<a:tick:625567997146431520> Membership includes all passes including the ones we add in future at no extra cost to you \n\nCost- \n:moneybag: 100,000 credits for lifetimes \n\n:moneybag: 20,000 credits for 1 month \n\n:moneybag: 10,000 credits for 1 weekly \n\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬"
+    embed = discord.Embed(title="MIMIKYU WORLD MEMBERSHIP", description=None, color=0X27ece1)
+    embed.add_field(name="<a:124:625571171366338571> What is Mimikyu World Membership? \nMimikyu membership is a membership for this server which grants you some special features then normal users for monthly/lifetime!", value=rule_1, inline=False)
     await ctx.send(embed=embed)	
 			   
 		

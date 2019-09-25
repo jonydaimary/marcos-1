@@ -33,7 +33,7 @@ async def on_ready():
 @client.event
 async def on_member_join(member):
     guild = client_id = "592262404071620610"
-    channel = client.get_channel(593696190730862592)   
+    channel = client.get_channel(604320261306843166)   
     person_count = len([member for member in member.guild.members if not member.bot])
     embed = discord.Embed(title=f'Welcome {member.name} to {member.guild.name}', description='**__Thanks for Joining__**', color=0X27ece1)
     embed.set_thumbnail(url=member.avatar_url) 
